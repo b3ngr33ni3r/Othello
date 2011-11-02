@@ -185,7 +185,7 @@
 	"click.h"
 	<SFML/Graphics.hpp>
 
-1320261208 source:c:\users\b3n\documents\codeblocks projects\othellobetter\logfile.cpp
+1320264005 source:c:\users\b3n\documents\codeblocks projects\othellobetter\logfile.cpp
 	"logfile.h"
 	<iostream>
 	<string>
@@ -194,7 +194,7 @@
 	<stdlib.h>
 	<cstring>
 
-1320212179 c:\users\b3n\documents\codeblocks projects\othellobetter\logfile.h
+1320263226 c:\users\b3n\documents\codeblocks projects\othellobetter\logfile.h
 	<string>
 	<fstream>
 

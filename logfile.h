@@ -13,10 +13,11 @@ class logfile
         int write(int data,std::string arg);
         int fileSize(char * fname);
         std::string addTime();
-        std::string generateEnding();
+        char * generateEnding();
     protected:
     private:
     int maxLength;
+    char * currentfile;
 };
 
 #endif // LOGFILE_H

@@ -13,6 +13,7 @@ logfile::logfile()
     //ctor
      srand ( time(NULL) );
     maxLength=1800000;
+    currentfile="all.log";
 }
 
 
@@ -39,7 +40,7 @@ FILE * pFile;
   }
 }
 
-string logfile::generateEnding()
+char * logfile::generateEnding()
 {
      int num = rand() % 10000 + 1;
      char catted[15];//will never be more then this
@@ -47,8 +48,11 @@ string logfile::generateEnding()
   strcat (catted,(const char *)num);
   strcat (catted,".log");
      ifstream test (catted);
-     //if success VV else recurse
-return catted;
+     if (test.is_open())
+        return catted;
+    else
+        generateEnding();
+
 }
 
 string logfile::addTime()
@@ -64,25 +68,24 @@ string logfile::addTime()
 
 int logfile::write(std::string data)
 {
+    cout<<"writing";
   ofstream myfile;
-  if (fileSize("all.log")<maxLength)
-  {
-    myfile.open ("all.log",ios::app);
+  if (fileSize(currentfile)>maxLength)
+        currentfile=generateEnding();   //this is a problem
+
+    myfile.open (currentfile,ios::app);
     myfile << data;
     myfile.close();
     return 1;//success, written
-  }else{
-    //myfile.open ("all"+generateEnding()+".log",ios::app);  //rewrite new ending and use that file enstead
-    myfile << data;
-    myfile.close();
-    return 1;//success, written
-  }
+
 }
 
 int logfile::write(int data)
 {
   ofstream myfile;
-  myfile.open ("all.log",ios::app);
+   if (fileSize(currentfile)>maxLength)
+        currentfile=generateEnding();
+  myfile.open (currentfile,ios::app);
   myfile << data;
   myfile.close();
   return 1;//success, written
@@ -94,7 +97,9 @@ int logfile::write(std::string data,std::string arg)
 {
     if (arg=="-v"){cout<<data;}
   ofstream myfile;
-  myfile.open ("all.log",ios::app);
+   if (fileSize(currentfile)>maxLength)
+        currentfile=generateEnding();
+  myfile.open (currentfile,ios::app);
   myfile << data;
   myfile.close();
   return 1;//success, written
@@ -104,7 +109,9 @@ int logfile::write(int data,std::string arg)
 {
     if (arg=="-v"){cout<<data;}
   ofstream myfile;
-  myfile.open ("all.log",ios::app);
+   if (fileSize(currentfile)>maxLength)
+        currentfile=generateEnding();
+  myfile.open (currentfile,ios::app);
   myfile << data;
   myfile.close();
   return 1;//success, written
