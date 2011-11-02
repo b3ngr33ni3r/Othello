@@ -16,3 +16,11 @@ Changelog
 
 right now, im fixing a drawing issue with ->isavail cells so that all available
 cells will be drawn, rather then lagging one behind
+
+
+------
+TO RUN my progress so far, checkout 
+https://github.com/b3ngr33ni3r/Othello/tree/master/OthelloBetter/bin/Release
+but note you'll need to run the exe in an enviroment that contains all 
+the files (the .dll's and .ttf) otherwise it'll error out
+
