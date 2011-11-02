@@ -49,8 +49,11 @@ char * logfile::generateEnding()
   strcat (catted,".log");
      ifstream test (catted);
      if (test.is_open())
+        {
+        test.close();
         return catted;
-    else
+        }
+    else   //SO WRONG....FML......he needs to come help me...fuck english...
         generateEnding();
 
 }
