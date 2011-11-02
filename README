@@ -1,0 +1,18 @@
+--------------
+Oh Hai...
+This project is made by b3ngr33ni3r for his comp128 class.
+
+Basically what it is, is a GUI OTHELLO GAME.
+
+Othello being this: www.malaysiaothello.org/documents/OthelloRules.pdf
+
+
+
+Thats all... for now. 
+
+
+-----
+Changelog
+
+right now, im fixing a drawing issue with ->isavail cells so that all available
+cells will be drawn, rather then lagging one behind
