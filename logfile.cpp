@@ -52,7 +52,7 @@ char * logfile::generateEnding()
   strcat (catted,Buffer);
   strcat (catted,".log");
      //cout<<catted;
-  ifstream test;
+  ofstream test;
   test.open(catted);
      if (test.is_open())
         {
@@ -77,7 +77,7 @@ string logfile::addTime()
 
 int logfile::write(std::string data)
 {
-    cout<<"writing";
+
   ofstream myfile;
   if (fileSize(currentfile)>maxLength)
         currentfile=generateEnding();   //this is a problem
