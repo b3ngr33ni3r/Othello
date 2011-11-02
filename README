@@ -6,7 +6,7 @@ Basically what it is, is a GUI OTHELLO GAME.
 
 Othello being this: www.malaysiaothello.org/documents/OthelloRules.pdf
 
-the gui uses the SFML framework:http://sfml-dev.org
+the gui uses the SFML framework: http://sfml-dev.org
 
 Thats all... for now. 
 
