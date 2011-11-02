@@ -44,7 +44,7 @@ string logfile::generateEnding()
      int num = rand() % 10000 + 1;
      char catted[15];//will never be more then this
   strcat (catted,"all-");
-  strcat (catted,(char)num);
+  strcat (catted,(const char *)num);
   strcat (catted,".log");
      ifstream test (catted);
      //if success VV else recurse
