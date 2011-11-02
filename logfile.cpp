@@ -43,17 +43,23 @@ FILE * pFile;
 char * logfile::generateEnding()
 {
      int num = rand() % 10000 + 1;
-     char catted[15];//will never be more then this
+     char catted[15];      //will never be more then this
+     catted[0]='\0';
+     char Buffer[8];
+     itoa (num,Buffer,10);
+     //cout<<(char)num;    //causes weird beeping==BAD
   strcat (catted,"all-");
-  strcat (catted,(const char *)num);
+  strcat (catted,Buffer);
   strcat (catted,".log");
-     ifstream test (catted);
+     //cout<<catted;
+  ifstream test;
+  test.open(catted);
      if (test.is_open())
         {
         test.close();
         return catted;
         }
-    else   //SO WRONG....FML......he needs to come help me...fuck english...
+    else
         generateEnding();
 
 }
