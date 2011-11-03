@@ -138,27 +138,30 @@ while (list)
     directions=visibleness(callChipsFunction,list->index);
     //directions=testarray;//this makes it so it wont setMovehere() for any directions of any new cell, becuase, it was crashing it in visibleness();
 
-log.write(log.addTime());
-log.write("cell#:");
-log.write(list->index);
-log.write("\tdirections:");
-log.write(directions[0]);
-log.write(",");
-log.write(directions[1]);
-log.write(",");
-log.write(directions[2]);
-log.write(",");
-log.write(directions[3]);
-log.write(",");
-log.write(directions[4]);
-log.write(",");
-log.write(directions[5]);
-log.write(",");
-log.write(directions[6]);
-log.write(",");
-log.write(directions[7]);
-log.write("\n\n");
+if (!log.checkfor(log.getTime_hr()+":"+log.getTime_min()+":"+log.getTime_sec()))//ask @MusicAdam about this one, string should allow + but its not.
+{
 
+    log.write(log.addTime());
+    log.write("cell#:");
+    log.write(list->index);
+    log.write("\tdirections:");
+    log.write(directions[0]);
+    log.write(",");
+    log.write(directions[1]);
+    log.write(",");
+    log.write(directions[2]);
+    log.write(",");
+    log.write(directions[3]);
+    log.write(",");
+    log.write(directions[4]);
+    log.write(",");
+    log.write(directions[5]);
+    log.write(",");
+    log.write(directions[6]);
+    log.write(",");
+    log.write(directions[7]);
+    log.write("\n\n");
+}
 
 //get valid directions from currently scanning cell, if direction is not visible its valid (aka if NOTHING is there)
 

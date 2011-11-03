@@ -13,7 +13,11 @@ class logfile
         int write(int data,std::string arg);
         int fileSize(char * fname);
         std::string addTime();
+        int getTime_sec();
+        int getTime_min();
+        int getTime_hr();
         char * generateEnding();
+        bool checkfor(std::string me);
     protected:
     private:
     int maxLength;

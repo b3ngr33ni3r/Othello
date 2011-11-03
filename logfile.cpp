@@ -17,6 +17,32 @@ logfile::logfile()
 }
 
 
+bool logfile::checkfor(std::string me)
+{
+    ifstream f;
+    string line;
+
+    f.open("all.log");
+
+    if (f.is_open())
+    {
+        while ( !f.eof() )
+        {
+            getline (f,line);
+
+
+            if (line.find(me)!=string::npos)
+            {
+                return true;
+            }
+
+        }
+        f.close();
+    }
+
+    return false;
+}
+
 int logfile::fileSize(char * fname)
 {
     /*
@@ -73,6 +99,59 @@ string logfile::addTime()
   timeinfo = localtime ( &rawtime );
   return asctime (timeinfo);
 
+}
+
+
+
+
+/*
+ *  The getTime functions below provide easy access to an int value of the EST time of the system.
+ *  _sec,_min,_hr are the choices.
+ *
+ */
+int logfile::getTime_sec()
+{
+
+    time_t rawtime;
+    struct tm * ptm;
+
+    time ( &rawtime );
+
+    ptm = gmtime ( &rawtime );
+    int hr= (ptm->tm_hour-5)%24;
+    int min= ptm->tm_min;
+    int sec= ptm->tm_sec;
+    return sec;
+}
+
+int logfile::getTime_hr()
+{
+
+    time_t rawtime;
+    struct tm * ptm;
+
+    time ( &rawtime );
+
+    ptm = gmtime ( &rawtime );
+    int hr= (ptm->tm_hour-5)%24;
+    int min= ptm->tm_min;
+    int sec= ptm->tm_sec;
+    return hr;
+}
+
+int logfile::getTime_min()
+{
+
+    time_t rawtime;
+    struct tm * ptm;
+
+    time ( &rawtime );
+
+    ptm = gmtime ( &rawtime );
+    int hr= (ptm->tm_hour-5)%24;
+    int min= ptm->tm_min;
+    int sec= ptm->tm_sec;
+    return min;
 }
 
 int logfile::write(std::string data)
