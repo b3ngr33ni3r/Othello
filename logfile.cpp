@@ -79,8 +79,8 @@ int logfile::write(std::string data)
 {
 
   ofstream myfile;
-  if (fileSize(currentfile)>maxLength)
-        currentfile=generateEnding();   //this is a problem
+  //if (fileSize(currentfile)>maxLength)
+ //       currentfile=generateEnding();   //this is a problem
 
     myfile.open (currentfile,ios::app);
     myfile << data;
@@ -92,8 +92,8 @@ int logfile::write(std::string data)
 int logfile::write(int data)
 {
   ofstream myfile;
-   if (fileSize(currentfile)>maxLength)
-        currentfile=generateEnding();
+//   if (fileSize(currentfile)>maxLength)
+ //       currentfile=generateEnding();
   myfile.open (currentfile,ios::app);
   myfile << data;
   myfile.close();
@@ -106,8 +106,8 @@ int logfile::write(std::string data,std::string arg)
 {
     if (arg=="-v"){cout<<data;}
   ofstream myfile;
-   if (fileSize(currentfile)>maxLength)
-        currentfile=generateEnding();
+ //  if (fileSize(currentfile)>maxLength)
+ //       currentfile=generateEnding();
   myfile.open (currentfile,ios::app);
   myfile << data;
   myfile.close();
@@ -118,8 +118,8 @@ int logfile::write(int data,std::string arg)
 {
     if (arg=="-v"){cout<<data;}
   ofstream myfile;
-   if (fileSize(currentfile)>maxLength)
-        currentfile=generateEnding();
+ //  if (fileSize(currentfile)>maxLength)
+ //       currentfile=generateEnding();
   myfile.open (currentfile,ios::app);
   myfile << data;
   myfile.close();
