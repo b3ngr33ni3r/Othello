@@ -138,7 +138,8 @@ while (list)
     directions=visibleness(callChipsFunction,list->index);
     //directions=testarray;//this makes it so it wont setMovehere() for any directions of any new cell, becuase, it was crashing it in visibleness();
 
-if (!log.checkfor(log.getTime_hr()+":"+log.getTime_min()+":"+log.getTime_sec()))//ask @MusicAdam about this one, string should allow + but its not.
+//if (!log.checkfor(std::string((const char *)log.getTime_hr())+std::string(":")+std::string((const char *)log.getTime_min())+std::string(":")+std::string((const char *)log.getTime_sec())))//ask @MusicAdam about this one, string should allow + but its not.
+if (1)
 {//or maybe just write a "last pushed" command, and see if its all the same shit, if so, ignore it.
 
     log.write(log.addTime());
