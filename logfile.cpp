@@ -13,8 +13,35 @@ logfile::logfile()
     //ctor
      srand ( time(NULL) );
     maxLength=1800000;
+    currentfile="all.log";
 }
 
+
+bool logfile::checkfor(std::string me)
+{
+    ifstream f;
+    string line;
+
+    f.open("all.log");
+
+    if (f.is_open())
+    {
+        while ( !f.eof() )
+        {
+            getline (f,line);
+
+
+            if (line.find(me)!=string::npos)
+            {
+                return true;
+            }
+
+        }
+        f.close();
+    }
+
+    return false;
+}
 
 int logfile::fileSize(char * fname)
 {
@@ -39,16 +66,28 @@ FILE * pFile;
   }
 }
 
-string logfile::generateEnding()
+char * logfile::generateEnding()
 {
      int num = rand() % 10000 + 1;
-     char catted[15];//will never be more then this
+     char catted[15];      //will never be more then this
+     catted[0]='\0';
+     char Buffer[8];
+     itoa (num,Buffer,10);
+     //cout<<(char)num;    //causes weird beeping==BAD
   strcat (catted,"all-");
-  strcat (catted,(char)num);
+  strcat (catted,Buffer);
   strcat (catted,".log");
-     ifstream test (catted);
-     //if success VV else recurse
-return catted;
+     //cout<<catted;
+  ofstream test;
+  test.open(catted);
+     if (test.is_open())
+        {
+        test.close();
+        return catted;
+        }
+    else
+        generateEnding();
+
 }
 
 string logfile::addTime()
@@ -62,27 +101,79 @@ string logfile::addTime()
 
 }
 
+
+
+
+/*
+ *  The getTime functions below provide easy access to an int value of the EST time of the system.
+ *  _sec,_min,_hr are the choices.
+ *
+ */
+int logfile::getTime_sec()
+{
+
+    time_t rawtime;
+    struct tm * ptm;
+
+    time ( &rawtime );
+
+    ptm = gmtime ( &rawtime );
+    int hr= (ptm->tm_hour-5)%24;
+    int min= ptm->tm_min;
+    int sec= ptm->tm_sec;
+    return sec;
+}
+
+int logfile::getTime_hr()
+{
+
+    time_t rawtime;
+    struct tm * ptm;
+
+    time ( &rawtime );
+
+    ptm = gmtime ( &rawtime );
+    int hr= (ptm->tm_hour-5)%24;
+    int min= ptm->tm_min;
+    int sec= ptm->tm_sec;
+    return hr;
+}
+
+int logfile::getTime_min()
+{
+
+    time_t rawtime;
+    struct tm * ptm;
+
+    time ( &rawtime );
+
+    ptm = gmtime ( &rawtime );
+    int hr= (ptm->tm_hour-5)%24;
+    int min= ptm->tm_min;
+    int sec= ptm->tm_sec;
+    return min;
+}
+
 int logfile::write(std::string data)
 {
+
   ofstream myfile;
-  if (fileSize("all.log")<maxLength)
-  {
-    myfile.open ("all.log",ios::app);
+  //if (fileSize(currentfile)>maxLength)
+ //       currentfile=generateEnding();   //this is a problem
+
+    myfile.open (currentfile,ios::app);
     myfile << data;
     myfile.close();
     return 1;//success, written
-  }else{
-    //myfile.open ("all"+generateEnding()+".log",ios::app);  //rewrite new ending and use that file enstead
-    myfile << data;
-    myfile.close();
-    return 1;//success, written
-  }
+
 }
 
 int logfile::write(int data)
 {
   ofstream myfile;
-  myfile.open ("all.log",ios::app);
+//   if (fileSize(currentfile)>maxLength)
+ //       currentfile=generateEnding();
+  myfile.open (currentfile,ios::app);
   myfile << data;
   myfile.close();
   return 1;//success, written
@@ -94,7 +185,9 @@ int logfile::write(std::string data,std::string arg)
 {
     if (arg=="-v"){cout<<data;}
   ofstream myfile;
-  myfile.open ("all.log",ios::app);
+ //  if (fileSize(currentfile)>maxLength)
+ //       currentfile=generateEnding();
+  myfile.open (currentfile,ios::app);
   myfile << data;
   myfile.close();
   return 1;//success, written
@@ -104,7 +197,9 @@ int logfile::write(int data,std::string arg)
 {
     if (arg=="-v"){cout<<data;}
   ofstream myfile;
-  myfile.open ("all.log",ios::app);
+ //  if (fileSize(currentfile)>maxLength)
+ //       currentfile=generateEnding();
+  myfile.open (currentfile,ios::app);
   myfile << data;
   myfile.close();
   return 1;//success, written

@@ -155,7 +155,7 @@
 	<iostream>
 	<SFML/Graphics.hpp>
 
-1319485692 source:c:\users\b3n\documents\codeblocks projects\othellobetter\draw.cpp
+1320293066 source:c:\users\b3n\documents\codeblocks projects\othellobetter\draw.cpp
 	"draw.h"
 	"chips.h"
 	"click.h"
@@ -185,18 +185,20 @@
 	"click.h"
 	<SFML/Graphics.hpp>
 
-1320211675 source:c:\users\b3n\documents\codeblocks projects\othellobetter\logfile.cpp
+1320317601 source:c:\users\b3n\documents\codeblocks projects\othellobetter\logfile.cpp
 	"logfile.h"
 	<iostream>
 	<string>
 	<fstream>
 	<time.h>
+	<stdlib.h>
+	<cstring>
 
-1320212179 c:\users\b3n\documents\codeblocks projects\othellobetter\logfile.h
+1320317599 c:\users\b3n\documents\codeblocks projects\othellobetter\logfile.h
 	<string>
 	<fstream>
 
-1320199446 source:c:\users\b3n\documents\codeblocks projects\othellobetter\logic.cpp
+1320317334 source:c:\users\b3n\documents\codeblocks projects\othellobetter\logic.cpp
 	"logic.h"
 	"chips.h"
 	"board.h"
