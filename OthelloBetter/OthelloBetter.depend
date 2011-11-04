@@ -179,10 +179,11 @@
 	"logic.h"
 	"click.h"
 
-1320167836 c:\users\b3n\documents\codeblocks projects\othellobetter\logic.h
+1320386330 c:\users\b3n\documents\codeblocks projects\othellobetter\logic.h
 	"chips.h"
 	"board.h"
 	"click.h"
+	<string>
 	<SFML/Graphics.hpp>
 
 1320317601 source:c:\users\b3n\documents\codeblocks projects\othellobetter\logfile.cpp

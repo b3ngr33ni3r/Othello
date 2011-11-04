@@ -3,6 +3,7 @@
 #include "board.h"
 #include "logfile.h"
 #include <string>
+#include <sstream>
 #include <iostream>
 Logic::Logic()
 {
@@ -117,6 +118,15 @@ while(list)
 return -1; //not found
  }
 
+std::string Logic::intoString(int i)
+{
+    std::stringstream ss;//create a stringstream
+    ss << i;//add number to the stream
+    return ss.str();//return a string with the contents of the str
+
+
+}
+
 
 void Logic::scanner(Board& callBoardFunction,Chips& callChipsFunction,Click& click,sf::RenderWindow& Game)
 {
@@ -138,8 +148,7 @@ while (list)
     directions=visibleness(callChipsFunction,list->index);
     //directions=testarray;//this makes it so it wont setMovehere() for any directions of any new cell, becuase, it was crashing it in visibleness();
 
-//if (!log.checkfor(std::string((const char *)log.getTime_hr())+std::string(":")+std::string((const char *)log.getTime_min())+std::string(":")+std::string((const char *)log.getTime_sec())))//ask @MusicAdam about this one, string should allow + but its not.
-if (1)
+if (!log.checkfor(std::string((const char *)log.getTime_hr())+std::string(":")+std::string((const char *)log.getTime_min())+std::string(":")+std::string((const char *)log.getTime_sec())))//ask @MusicAdam about this one, string should allow + but its not.
 {//or maybe just write a "last pushed" command, and see if its all the same shit, if so, ignore it.
 
     log.write(log.addTime());

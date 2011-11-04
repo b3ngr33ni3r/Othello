@@ -3,6 +3,7 @@
 #include "chips.h"
 #include "board.h"
 #include "click.h"
+#include <string>
 #include <SFML/Graphics.hpp>
 class Logic
 {
@@ -13,6 +14,7 @@ class Logic
     bool diagonalsAllowed(Chips& callChipsFunction);
     int* visibleness(Chips& callChipsFunction,int cell);
     int returnCell(int x,int y,Chips& callChipsFunction,Board& board);
+    std::string intoString(int i);
     void scanner(Board& callBoardFunction,Chips& callChipsFunction,Click& click,sf::RenderWindow& Game);
     protected:
     private:
