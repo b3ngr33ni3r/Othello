@@ -23,16 +23,17 @@ int Render::Renderer()
       Logic logical;
       Write write;
       Draw draw;
+      bool scannerCallBack=false;
       Board callBoardFunction(Game,callChipsFunction);
       const sf::Input& InputStream = Game.GetInput();
       while (Game.IsOpened())
       {
 
-      all.EventsLoop(Game,InputStream,callChipsFunction,callBoardFunction,logical,click);
+      all.EventsLoop(Game,InputStream,callChipsFunction,callBoardFunction,logical,click,scannerCallBack);
       Game.Clear();
       callBoardFunction.drawBoard(Game,callChipsFunction,click);
-      logical.setCellsMovables(28,callChipsFunction,callBoardFunction,click);
-      logical.scanner(callBoardFunction,callChipsFunction,click,Game);//scans for other players cells, checks suroundings and set ->isavail true for those
+      //logical.setCellsMovables(28,callChipsFunction,callBoardFunction,click);
+      logical.scanner(callBoardFunction,callChipsFunction,click,Game,scannerCallBack);//scans for other players cells, checks suroundings and set ->isavail true for those
       if (click.isp1){
       write.sentence("greys turn. come on, make a move.",Game,10,10);
       }else{

@@ -128,7 +128,7 @@ std::string Logic::intoString(int i)
 }
 
 
-void Logic::scanner(Board& callBoardFunction,Chips& callChipsFunction,Click& click,sf::RenderWindow& Game)
+void Logic::scanner(Board& callBoardFunction,Chips& callChipsFunction,Click& click,sf::RenderWindow& Game,bool callback)
 {
 
 int* directions;
@@ -148,6 +148,8 @@ while (list)
     directions=visibleness(callChipsFunction,list->index);
     //directions=testarray;//this makes it so it wont setMovehere() for any directions of any new cell, becuase, it was crashing it in visibleness();
 
+
+/*
 if (!log.checkfor(intoString(log.getTime_hr())+std::string(":")+intoString(log.getTime_min())+std::string(":")+intoString(log.getTime_sec())))//ask @MusicAdam about this one, string should allow + but its not.
 {//or maybe just write a "last pushed" command, and see if its all the same shit, if so, ignore it.
 
@@ -172,7 +174,8 @@ if (!log.checkfor(intoString(log.getTime_hr())+std::string(":")+intoString(log.g
     log.write(directions[7]);
     log.write("\n\n");
 }
-
+*/
+if (callback){std::cout<<std::endl<<list->index<<" is "<<list->isp1<<std::endl;}
 //get valid directions from currently scanning cell, if direction is not visible its valid (aka if NOTHING is there)
 
         for (int i=0;i<8;i++)
@@ -181,8 +184,9 @@ if (!log.checkfor(intoString(log.getTime_hr())+std::string(":")+intoString(log.g
             {
                 //set valid directions cells to movable, and give them the p1
                 //std::cout<<"\ndirections[i]"<<directions[i]<<"\t";
+
                 callChipsFunction.setMovehere(directions[i]);
-                callChipsFunction.setP1(directions[i],list->isp1);//overload to allow setting to false/true, set to whatever isp1 for the scanned cell is, so if scanning a p1 cell, =p1
+                callChipsFunction.setP1(directions[i],list->isp1);//set to whatever isp1 for the scanned cell is, so if scanning a p1 cell, =p1
                 //std::cout<<"\n-A-"<<list->index<<"-A-";
             }
         }

@@ -15,7 +15,7 @@ class Logic
     int* visibleness(Chips& callChipsFunction,int cell);
     int returnCell(int x,int y,Chips& callChipsFunction,Board& board);
     std::string intoString(int i);
-    void scanner(Board& callBoardFunction,Chips& callChipsFunction,Click& click,sf::RenderWindow& Game);
+    void scanner(Board& callBoardFunction,Chips& callChipsFunction,Click& click,sf::RenderWindow& Game,bool callback);
     protected:
     private:
     int six[8];//array to return valid directions

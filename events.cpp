@@ -14,7 +14,7 @@ Events::Events()
 }
 
 
-int Events::EventsLoop(sf::RenderWindow& Win,const sf::Input& InputStream,Chips& ChipCaller,Board& board, Logic& logical,Click& click)
+int Events::EventsLoop(sf::RenderWindow& Win,const sf::Input& InputStream,Chips& ChipCaller,Board& board, Logic& logical,Click& click,bool& scannerCallback)
 {
         sf::Event Event;
         logfile log;
@@ -48,7 +48,9 @@ int Events::EventsLoop(sf::RenderWindow& Win,const sf::Input& InputStream,Chips&
                ChipCaller.display();
             }
             if ((Event.Type == sf::Event::KeyReleased)&&(Event.Key.Code == sf::Key::T))
-            std::cout<<log.fileSize("all.log")<<"\n";
+            scannerCallback=true;
+            if ((Event.Type == sf::Event::KeyReleased)&&(Event.Key.Code == sf::Key::F))
+            scannerCallback=false;
 
         }
 

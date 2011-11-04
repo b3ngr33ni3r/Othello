@@ -9,7 +9,7 @@ class Events
 {
     public:
     Events();
-    int EventsLoop(sf::RenderWindow& Win,const sf::Input& InputStream,Chips& ChipsCaller,Board& board,Logic& logical,Click& click);
+    int EventsLoop(sf::RenderWindow& Win,const sf::Input& InputStream,Chips& ChipsCaller,Board& board,Logic& logical,Click& click,bool& scannerCallback);
     protected:
     private:
 
