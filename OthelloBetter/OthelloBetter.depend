@@ -236,3 +236,126 @@
 	<string>
 	<iostream>
 
+1320254734 source:c:\users\b3n\othello\ai.cpp
+	"ai.h"
+
+1320254734 c:\users\b3n\othello\ai.h
+
+1320680738 source:c:\users\b3n\othello\board.cpp
+	"board.h"
+	"chips.h"
+	"draw.h"
+	"click.h"
+	<iostream>
+	<SFML/Graphics.hpp>
+
+1320254734 c:\users\b3n\othello\board.h
+	<SFML/Graphics.hpp>
+	"chips.h"
+	"click.h"
+
+1320680738 c:\users\b3n\othello\chips.h
+	<SFML/Graphics.hpp>
+
+1320254734 c:\users\b3n\othello\click.h
+	"chips.h"
+	<SFML/Graphics.hpp>
+
+1320254734 c:\users\b3n\othello\draw.h
+	<SFML/Graphics.hpp>
+	"chips.h"
+	"click.h"
+
+1320254734 source:c:\users\b3n\othello\chips.cpp
+	"chips.h"
+	"logfile.h"
+	<iostream>
+	<SFML/Graphics.hpp>
+
+1320362899 c:\users\b3n\othello\logfile.h
+	<string>
+	<fstream>
+
+1320254734 source:c:\users\b3n\othello\click.cpp
+	"click.h"
+	"chips.h"
+	<iostream>
+	<SFML/Graphics.hpp>
+
+1320524314 source:c:\users\b3n\othello\draw.cpp
+	"draw.h"
+	"chips.h"
+	"click.h"
+	<SFML/Graphics.hpp>
+	<iostream>
+
+1320680738 source:c:\users\b3n\othello\events.cpp
+	"events.h"
+	"chips.h"
+	"logic.h"
+	"click.h"
+	"board.h"
+	"logfile.h"
+	<iostream>
+	<SFML/Graphics.hpp>
+
+1320511654 c:\users\b3n\othello\events.h
+	<SFML/Graphics.hpp>
+	"chips.h"
+	"board.h"
+	"logic.h"
+	"click.h"
+
+1320680738 c:\users\b3n\othello\logic.h
+	"chips.h"
+	"board.h"
+	"click.h"
+	<string>
+	<SFML/Graphics.hpp>
+
+1320362899 source:c:\users\b3n\othello\logfile.cpp
+	"logfile.h"
+	<iostream>
+	<string>
+	<fstream>
+	<time.h>
+	<stdlib.h>
+	<cstring>
+
+1320680739 source:c:\users\b3n\othello\logic.cpp
+	"logic.h"
+	"chips.h"
+	"board.h"
+	"logfile.h"
+	<string>
+	<sstream>
+	<iostream>
+
+1320254734 source:c:\users\b3n\othello\main.cpp
+	<iostream>
+	<SFML/Graphics.hpp>
+	"render.h"
+
+1320254734 c:\users\b3n\othello\render.h
+
+1320511654 source:c:\users\b3n\othello\render.cpp
+	"render.h"
+	"events.h"
+	"board.h"
+	"chips.h"
+	"logic.h"
+	"click.h"
+	"write.h"
+	"draw.h"
+	<SFML/Graphics.hpp>
+
+1320254735 c:\users\b3n\othello\write.h
+	<SFML/Graphics.hpp>
+	<string>
+
+1320254735 source:c:\users\b3n\othello\write.cpp
+	"write.h"
+	<SFML/Graphics.hpp>
+	<string>
+	<iostream>
+

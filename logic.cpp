@@ -189,8 +189,8 @@ if (callback){std::cout<<std::endl<<list->index<<" is "<<list->isp1<<std::endl;}
                 callChipsFunction.setMovehere(directions[i]);
                 if (callChipsFunction.getClickedTotal()<5)
                     callChipsFunction.setP1(directions[i],list->isp1);//set to whatever isp1 for the scanned cell is, so if scanning a p1 cell, =p1
-                else
-                    callChipsFunction.setP1(directions[i],!list->isp1); //this creates invalid points, but validates the 11-13 issues
+                //else
+                     //callChipsFunction.setP1(directions[i],!list->isp1); //this creates invalid points, but validates the 11-13 issues
                 //std::cout<<"\n-A-"<<list->index<<"-A-";
             }
         }

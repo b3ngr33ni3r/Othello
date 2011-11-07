@@ -21,7 +21,7 @@ int Draw::DrawBoard(sf::RenderWindow& MainWindow,Chips callChipsFunction,Click& 
         {
             if (list->isavail)
             {
-                if (list->isp1==click.isp1)
+               // if (list->isp1==click.isp1) //with this commented, all avails are drawn
                     MainWindow.Draw(sf::Shape::Circle((list->x+((list->x2-list->x)/2)),(list->y+((list->y2-list->y)/2)),3,list->color));
             }
             else
