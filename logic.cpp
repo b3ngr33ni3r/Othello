@@ -230,12 +230,12 @@ void Logic::pathfinder(Chips& c,Board& b)//want this to be scalable, for any boa
 //check each row
 int iterator=b.LENGTH/b.INCREMENT;
 
-    for (int i=0;i<iterator;i++)
+    for (int i=0;i<=iterator;i++)
     {
 
         if (i>0)
         {
-            if((c.getPos(i+(movement::moveRight*i))->visible) && (!c.getPos(i+(movement::moveRight*i))->isavail))//if visible and ! avail contains chip
+            if((c.getPos(i+(movement::moveRight*i))->visible) && (!c.getPos(i+(movement::moveRight*i))->isavail))//if visible and ! avail contains chip | movement right cause 0-7 is left side of board
                 {
                     std::cout<<c.getPos(i+(movement::moveRight*i))->index<<"\n";
                 }

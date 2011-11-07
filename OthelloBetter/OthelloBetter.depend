@@ -118,7 +118,7 @@
 
 1319320026 c:\users\b3n\documents\codeblocks projects\othellobetter\ai.h
 
-1320196094 source:c:\users\b3n\documents\codeblocks projects\othellobetter\board.cpp
+1320638568 source:c:\users\b3n\documents\codeblocks projects\othellobetter\board.cpp
 	"board.h"
 	"chips.h"
 	"draw.h"
@@ -131,7 +131,7 @@
 	"chips.h"
 	"click.h"
 
-1319555750 c:\users\b3n\documents\codeblocks projects\othellobetter\chips.h
+1320639080 c:\users\b3n\documents\codeblocks projects\othellobetter\chips.h
 	<SFML/Graphics.hpp>
 
 1319480216 c:\users\b3n\documents\codeblocks projects\othellobetter\click.h
