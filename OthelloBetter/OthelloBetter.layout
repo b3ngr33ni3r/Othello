@@ -2,29 +2,22 @@
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
 	<File name="..\board.cpp" open="1" top="0" tabpos="7">
-		<Cursor position="57" topLine="0" />
-	</File>
-	<File name="..\board.h" open="1" top="0" tabpos="14">
-		<Cursor position="189" topLine="7" />
+		<Cursor position="2776" topLine="62" />
 	</File>
 	<File name="..\chips.cpp" open="1" top="0" tabpos="4">
-		<Cursor position="437" topLine="8" />
+		<Cursor position="2386" topLine="121" />
 	</File>
 	<File name="..\chips.h" open="1" top="0" tabpos="5">
-		<Cursor position="208" topLine="2" />
+		<Cursor position="639" topLine="0" />
 	</File>
 	<File name="..\click.cpp" open="1" top="0" tabpos="6">
-		<Cursor position="330" topLine="0" />
+		<Cursor position="234" topLine="0" />
 	</File>
 	<File name="..\draw.cpp" open="1" top="0" tabpos="9">
-<<<<<<< HEAD
 		<Cursor position="607" topLine="5" />
-=======
-		<Cursor position="278" topLine="5" />
->>>>>>> d409cbfec7ffb178f3055359066e9e920faa3e52
 	</File>
-	<File name="..\events.cpp" open="1" top="0" tabpos="8">
-		<Cursor position="2078" topLine="29" />
+	<File name="..\events.cpp" open="1" top="1" tabpos="8">
+		<Cursor position="1324" topLine="25" />
 	</File>
 	<File name="..\events.h" open="1" top="0" tabpos="13">
 		<Cursor position="320" topLine="0" />
@@ -35,20 +28,16 @@
 	<File name="..\logfile.h" open="1" top="0" tabpos="10">
 		<Cursor position="418" topLine="0" />
 	</File>
-	<File name="..\logic.cpp" open="1" top="1" tabpos="3">
-<<<<<<< HEAD
-		<Cursor position="6109" topLine="173" />
-=======
-		<Cursor position="8653" topLine="222" />
->>>>>>> d409cbfec7ffb178f3055359066e9e920faa3e52
+	<File name="..\logic.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="8628" topLine="223" />
 	</File>
 	<File name="..\logic.h" open="1" top="0" tabpos="12">
-		<Cursor position="774" topLine="0" />
+		<Cursor position="731" topLine="0" />
 	</File>
 	<File name="..\main.cpp" open="1" top="0" tabpos="1">
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="..\render.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="1315" topLine="16" />
+		<Cursor position="458" topLine="16" />
 	</File>
 </CodeBlocks_layout_file>
