@@ -20,6 +20,7 @@ wWidth=MainWindow.GetWidth();
 //callChipsFunction=caller;
 addcell=true;
 
+
 }
 
 

@@ -7,7 +7,7 @@ class Chips
     public:
     Chips();
 
-    struct chip{int x,y,x2,y2,index; sf::Color color; bool visible,isp1; chip* next; bool isavail; };
+    struct chip{int x,y,x2,y2,index; sf::Color color; bool visible,isp1,isavail; chip* next; };
 
 
     chip *head; int totalCells;

@@ -14,6 +14,7 @@ six[i]=-1;
 
 bool Logic::diagonalsAllowed(Chips& callChipsFunction)
 {
+    return false;//this FIXES the issues with visibleness re: the 11-13 problem. although, we also need to allow diags sometimes, so this will need revision.
     if (callChipsFunction.getClickedTotal()>4){ return true;}else{return false;}
 }
 
@@ -180,7 +181,7 @@ if (callback){std::cout<<std::endl<<list->index<<" is "<<list->isp1<<std::endl;}
 
         for (int i=0;i<8;i++)
         {
-            if (directions[i]!=-1)
+            if ((directions[i]!=-1)&&(!callChipsFunction.getPos(directions[i])->isavail))
             {
                 //set valid directions cells to movable, and give them the p1
                 //std::cout<<"\ndirections[i]"<<directions[i]<<"\t";
@@ -196,6 +197,25 @@ if (callback){std::cout<<std::endl<<list->index<<" is "<<list->isp1<<std::endl;}
 
     }
 //std::cout<<"list->index:"<<list->index<<"\n";
+
+
+//also take care of flipping here. Left<->Right and Up<->Down
+/*
+if ((callChipsFunction.getPos(list->index+movement::moveDown)->visible)&&(callChipsFunction.getPos(list->index+movement::moveUp)->visible)&&(callChipsFunction.getPos(list->index+movement::moveDown)->isp1==callChipsFunction.getPos(list->index+movement::moveUp)->isp1)&&(callChipsFunction.getPos(list->index+movement::moveRight)->isp1!=list->isp1))//if the up/down is visible, and are both the other isp1 from the current cell
+{
+    callChipsFunction.setP1(list->index,callChipsFunction.getPos(list->index+movement::moveDown)->isp1);//set it to the movedown (shouldn't matter whether its set to movedown or moveup
+
+}
+if ((callChipsFunction.getPos(list->index+movement::moveLeft)->visible)&&(callChipsFunction.getPos(list->index+movement::moveRight)->visible)&&(callChipsFunction.getPos(list->index+movement::moveLeft)->isp1==callChipsFunction.getPos(list->index+movement::moveRight)->isp1)&&(callChipsFunction.getPos(list->index+movement::moveRight)->isp1!=list->isp1))//if the right/left is visible, and a diff isp1
+{
+    callChipsFunction.setP1(list->index,callChipsFunction.getPos(list->index+movement::moveLeft)->isp1);//set it to the movedown (shouldn't matter whether its set to movedown or moveup
+}
+*/
+//the above is something that might be usefull, but not how to do it.
+
+//pathfinder(callChipsFunction,callBoardFunction);
+
+
     list=list->next;
 
 }
@@ -203,3 +223,33 @@ if (callback){std::cout<<std::endl<<list->index<<" is "<<list->isp1<<std::endl;}
 free(list);
 }
 
+
+
+void Logic::pathfinder(Chips& c,Board& b)//want this to be scalable, for any boardsize
+{
+//check each row
+int iterator=b.LENGTH/b.INCREMENT;
+
+    for (int i=0;i<=iterator;i++)
+    {
+
+        if (i>0)
+        {
+            if((c.getPos(i+(movement::moveRight*i))->visible) && (!c.getPos(i+(movement::moveRight*i))->isavail))//if visible and ! avail contains chip | movement right cause 0-7 is left side of board
+                {
+                    std::cout<<c.getPos(i+(movement::moveRight*i))->index<<"\n";
+                }
+        }
+        else
+        {
+            if ((c.getPos(i)->visible)&&((!c.getPos(i)->isavail)))//mimic above
+                {
+                    std::cout<<c.getPos(i)->index<<"\n";
+                }
+        }
+    }
+
+
+
+
+}
