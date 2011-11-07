@@ -232,20 +232,23 @@ int iterator=b.LENGTH/b.INCREMENT;
 
     for (int i=0;i<=iterator;i++)
     {
+        for (int a=0;a<=iterator; a++)
+        {
 
-        if (i>0)
-        {
-            if((c.getPos(i+(movement::moveRight*i))->visible) && (!c.getPos(i+(movement::moveRight*i))->isavail))//if visible and ! avail contains chip | movement right cause 0-7 is left side of board
-                {
-                    std::cout<<c.getPos(i+(movement::moveRight*i))->index<<"\n";
-                }
-        }
-        else
-        {
-            if ((c.getPos(i)->visible)&&((!c.getPos(i)->isavail)))//mimic above
-                {
-                    std::cout<<c.getPos(i)->index<<"\n";
-                }
+            if (i>0)
+            {
+                if((c.getPos(a+(movement::moveRight*i))->visible) && (!c.getPos(a+(movement::moveRight*i))->isavail))//if visible and ! avail contains chip | movement right cause 0-7 is left side of board
+                    {
+                        std::cout<<c.getPos(a+(movement::moveRight*i))->index<<"\n";
+                    }
+            }
+            else
+            {
+                if ((c.getPos(i)->visible)&&((!c.getPos(i)->isavail)))//mimic above
+                    {
+                        std::cout<<c.getPos(i)->index<<"\n";
+                    }
+            }
         }
     }
 
