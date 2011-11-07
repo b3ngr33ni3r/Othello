@@ -200,6 +200,7 @@ if (callback){std::cout<<std::endl<<list->index<<" is "<<list->isp1<<std::endl;}
 
 
 //also take care of flipping here. Left<->Right and Up<->Down
+/*
 if ((callChipsFunction.getPos(list->index+movement::moveDown)->visible)&&(callChipsFunction.getPos(list->index+movement::moveUp)->visible)&&(callChipsFunction.getPos(list->index+movement::moveDown)->isp1==callChipsFunction.getPos(list->index+movement::moveUp)->isp1)&&(callChipsFunction.getPos(list->index+movement::moveRight)->isp1!=list->isp1))//if the up/down is visible, and are both the other isp1 from the current cell
 {
     callChipsFunction.setP1(list->index,callChipsFunction.getPos(list->index+movement::moveDown)->isp1);//set it to the movedown (shouldn't matter whether its set to movedown or moveup
@@ -209,7 +210,10 @@ if ((callChipsFunction.getPos(list->index+movement::moveLeft)->visible)&&(callCh
 {
     callChipsFunction.setP1(list->index,callChipsFunction.getPos(list->index+movement::moveLeft)->isp1);//set it to the movedown (shouldn't matter whether its set to movedown or moveup
 }
+*/
+//the above is something that might be usefull, but not how to do it.
 
+//pathfinder(callChipsFunction,callBoardFunction);
 
 
     list=list->next;
@@ -219,3 +223,33 @@ if ((callChipsFunction.getPos(list->index+movement::moveLeft)->visible)&&(callCh
 free(list);
 }
 
+
+
+void Logic::pathfinder(Chips& c,Board& b)//want this to be scalable, for any boardsize
+{
+//check each row
+int iterator=b.LENGTH/b.INCREMENT;
+
+    for (int i=0;i<iterator;i++)
+    {
+
+        if (i>0)
+        {
+            if((c.getPos(i+(movement::moveRight*i))->visible) && (!c.getPos(i+(movement::moveRight*i))->isavail))//if visible and ! avail contains chip
+                {
+                    std::cout<<c.getPos(i+(movement::moveRight*i))->index<<"\n";
+                }
+        }
+        else
+        {
+            if ((c.getPos(i)->visible)&&((!c.getPos(i)->isavail)))//mimic above
+                {
+                    std::cout<<c.getPos(i)->index<<"\n";
+                }
+        }
+    }
+
+
+
+
+}

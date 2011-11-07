@@ -162,7 +162,7 @@
 	<SFML/Graphics.hpp>
 	<iostream>
 
-1320432287 source:c:\users\b3n\documents\codeblocks projects\othellobetter\events.cpp
+1320637867 source:c:\users\b3n\documents\codeblocks projects\othellobetter\events.cpp
 	"events.h"
 	"chips.h"
 	"logic.h"
@@ -179,7 +179,7 @@
 	"logic.h"
 	"click.h"
 
-1320431999 c:\users\b3n\documents\codeblocks projects\othellobetter\logic.h
+1320637752 c:\users\b3n\documents\codeblocks projects\othellobetter\logic.h
 	"chips.h"
 	"board.h"
 	"click.h"
@@ -199,7 +199,7 @@
 	<string>
 	<fstream>
 
-1320631857 source:c:\users\b3n\documents\codeblocks projects\othellobetter\logic.cpp
+1320637814 source:c:\users\b3n\documents\codeblocks projects\othellobetter\logic.cpp
 	"logic.h"
 	"chips.h"
 	"board.h"
