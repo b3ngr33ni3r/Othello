@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="..\board.cpp" open="1" top="0" tabpos="7">
+		<Cursor position="57" topLine="0" />
+	</File>
+	<File name="..\board.h" open="1" top="0" tabpos="14">
+		<Cursor position="189" topLine="7" />
+	</File>
+	<File name="..\chips.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="437" topLine="8" />
+	</File>
+	<File name="..\chips.h" open="1" top="0" tabpos="5">
+		<Cursor position="208" topLine="2" />
+	</File>
+	<File name="..\click.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="330" topLine="0" />
+	</File>
+	<File name="..\draw.cpp" open="1" top="0" tabpos="9">
+		<Cursor position="278" topLine="5" />
+	</File>
+	<File name="..\events.cpp" open="1" top="0" tabpos="8">
+		<Cursor position="2078" topLine="29" />
+	</File>
+	<File name="..\events.h" open="1" top="0" tabpos="13">
+		<Cursor position="320" topLine="0" />
+	</File>
+	<File name="..\logfile.cpp" open="1" top="0" tabpos="11">
+		<Cursor position="2026" topLine="104" />
+	</File>
+	<File name="..\logfile.h" open="1" top="0" tabpos="10">
+		<Cursor position="418" topLine="0" />
+	</File>
+	<File name="..\logic.cpp" open="1" top="1" tabpos="3">
+		<Cursor position="8653" topLine="222" />
+	</File>
+	<File name="..\logic.h" open="1" top="0" tabpos="12">
+		<Cursor position="774" topLine="0" />
+	</File>
+	<File name="..\main.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="..\render.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="1315" topLine="16" />
+	</File>
+</CodeBlocks_layout_file>
