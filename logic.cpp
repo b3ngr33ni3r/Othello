@@ -225,7 +225,7 @@ free(list);
 
 
 
-void Logic::pathfinder(Chips& c,Board& b)//want this to be scalable, for any boardsize
+void Logic::pathfinder(Chips& c,Board& b,int mover)//want this to be scalable, for any boardsize
 {
 //check each row
 int iterator=b.LENGTH/b.INCREMENT;
@@ -237,9 +237,26 @@ int iterator=b.LENGTH/b.INCREMENT;
 
             if (i>0)
             {
-                if((c.getPos(a+(movement::moveRight*i))->visible) && (!c.getPos(a+(movement::moveRight*i))->isavail))//if visible and ! avail contains chip | movement right cause 0-7 is left side of board
+                if((c.getPos(a+(mover*i))->visible) && (!c.getPos(a+(mover*i))->isavail))//if visible and ! avail contains chip | movement right cause 0-7 is left side of board
                     {
-                        std::cout<<c.getPos(a+(movement::moveRight*i))->index<<"\n";
+                        std::cout<<c.getPos(a+(mover*i))->index<<"\t"<<visibleness(c,c.getPos(a+(mover*i))->index)[1]<<"\n";
+
+                        if (visibleness(c,c.getPos(a+(mover*i))->index)[0]!=-1){std::cout<<"yay";}
+
+                        if (visibleness(c,c.getPos(a+(mover*i))->index)[1]!=-1){std::cout<<"yay1";}
+
+                        if (visibleness(c,c.getPos(a+(mover*i))->index)[2]!=-1){std::cout<<"yay2";}
+
+                        if (visibleness(c,c.getPos(a+(mover*i))->index)[3]!=-1){std::cout<<"yay3";}
+
+                        if (visibleness(c,c.getPos(a+(mover*i))->index)[4]!=-1){std::cout<<"yay4";}
+
+                        if (visibleness(c,c.getPos(a+(mover*i))->index)[5]!=-1){std::cout<<"yay5";}
+
+                        if (visibleness(c,c.getPos(a+(mover*i))->index)[6]!=-1){std::cout<<"yay6";}
+
+                        if (visibleness(c,c.getPos(a+(mover*i))->index)[7]!=-1){std::cout<<"yay7";}
+                        //if this outputs the available cells, we can just check these cells for if theyre in a line, and if their line has no spaces. if no spaces, check if same two colors are on the line end, and if they are, then color the whole line to the color of those two ends.
                     }
             }
             else

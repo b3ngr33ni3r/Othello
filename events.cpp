@@ -52,7 +52,7 @@ int Events::EventsLoop(sf::RenderWindow& Win,const sf::Input& InputStream,Chips&
             if ((Event.Type == sf::Event::KeyReleased)&&(Event.Key.Code == sf::Key::F))
             scannerCallback=false;
             if ((Event.Type == sf::Event::KeyReleased)&&(Event.Key.Code == sf::Key::Q))
-            logical.pathfinder(ChipCaller,board);
+            logical.pathfinder(ChipCaller,board,movement::moveRight);
         }
 
 
