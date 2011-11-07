@@ -179,7 +179,7 @@
 	"logic.h"
 	"click.h"
 
-1320684443 c:\users\b3n\documents\codeblocks projects\othellobetter\logic.h
+1320685481 c:\users\b3n\documents\codeblocks projects\othellobetter\logic.h
 	"chips.h"
 	"board.h"
 	"click.h"
@@ -199,7 +199,7 @@
 	<string>
 	<fstream>
 
-1320685002 source:c:\users\b3n\documents\codeblocks projects\othellobetter\logic.cpp
+1320685740 source:c:\users\b3n\documents\codeblocks projects\othellobetter\logic.cpp
 	"logic.h"
 	"chips.h"
 	"board.h"

@@ -9,6 +9,7 @@ class Chips
 
     struct chip{int x,y,x2,y2,index; sf::Color color; bool visible,isp1,isavail; chip* next; };
 
+    struct pathfinder_array{int cellnumber; }
 
     chip *head; int totalCells;
 

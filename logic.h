@@ -12,7 +12,7 @@ class Logic
     void setCellsMovables(int cell,Chips& callChipsFunction,Board& board,Click& click); //if you can move there, awesome, add it to available list as visible
     //int returnMousesCellNumber(int xa,int ya);
     bool diagonalsAllowed(Chips& callChipsFunction);
-    int* visibleness(Chips& callChipsFunction,int cell);
+    int* visibleness(Chips& callChipsFunction,int cell,bool visibleCheck);
     int returnCell(int x,int y,Chips& callChipsFunction,Board& board);
     std::string intoString(int i);
     void scanner(Board& callBoardFunction,Chips& callChipsFunction,Click& click,sf::RenderWindow& Game,bool callback);

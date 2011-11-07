@@ -18,7 +18,7 @@ bool Logic::diagonalsAllowed(Chips& callChipsFunction)
     if (callChipsFunction.getClickedTotal()>4){ return true;}else{return false;}
 }
 
-int* Logic::visibleness(Chips& callChipsFunction,int cell)
+int* Logic::visibleness(Chips& callChipsFunction,int cell,bool visibleCheck=true)
 {
 
     for (int i=0;i<8;i++)
@@ -26,6 +26,7 @@ six[i]=-1;
 
     Chips::chip * cur;
 
+if (visibleCheck){
         cur=callChipsFunction.getPos(cell+movement::moveUp);
         if ((!cur->visible)&&(cur->index>=0)&&(cur->index<64))
         {
@@ -84,7 +85,68 @@ six[i]=-1;
            // callChipsFunction.setMovehere(cur->index);
         } }
 
+}else{
 
+           cur=callChipsFunction.getPos(cell+movement::moveUp);
+        if ((cur->visible)&&(!cur->isavail)&&(cur->index>=0)&&(cur->index<64))
+        {
+            six[0]=cur->index;
+            //callChipsFunction.setMovehere(cur->index);
+        }
+
+        cur=callChipsFunction.getPos(cell+movement::moveDown);
+        if ((cur->visible)&&(!cur->isavail)&&(cur->index>=0)&&(cur->index<64))
+        {
+            six[1]=cur->index;
+              //  callChipsFunction.setMovehere(cur->index);
+        }
+
+        cur=callChipsFunction.getPos(cell+movement::moveLeft);
+        if ((cur->visible)&&(!cur->isavail)&&(cur->index>=0)&&(cur->index<64))
+        {
+            six[2]=cur->index;
+           // callChipsFunction.setMovehere(cur->index);
+        }
+
+        cur=callChipsFunction.getPos(cell+movement::moveRight);
+        if ((cur->visible)&&(!cur->isavail)&&(cur->index>=0)&&(cur->index<64))
+        {
+            six[3]=cur->index;
+           // callChipsFunction.setMovehere(cur->index);
+        }
+
+        if (diagonalsAllowed(callChipsFunction))
+        {
+        cur=callChipsFunction.getPos(cell+movement::diagDL);
+        if ((cur->visible)&&(!cur->isavail)&&(cur->index>=0)&&(cur->index<64))
+        {
+            six[4]=cur->index;
+          //  callChipsFunction.setMovehere(cur->index);
+        }
+
+        cur=callChipsFunction.getPos(cell+movement::diagUR);
+        if ((cur->visible)&&(!cur->isavail)&&(cur->index>=0)&&(cur->index<64))
+        {
+            six[5]=cur->index;
+           // callChipsFunction.setMovehere(cur->index);
+        }
+
+        cur=callChipsFunction.getPos(cell+movement::diagDR);
+        if ((cur->visible)&&(!cur->isavail)&&(cur->index>=0)&&(cur->index<64))
+        {
+            six[6]=cur->index;
+           // callChipsFunction.setMovehere(cur->index);
+        }
+
+        cur=callChipsFunction.getPos(cell+movement::diagUL);
+        if ((cur->visible)&&(!cur->isavail)&&(cur->index>=0)&&(cur->index<64))
+        {
+            six[7]=cur->index;
+           // callChipsFunction.setMovehere(cur->index);
+        } }
+
+
+}
        // }}}}
 
     return six;//0-3 is prime directions
@@ -239,23 +301,23 @@ int iterator=b.LENGTH/b.INCREMENT;
             {
                 if((c.getPos(a+(mover*i))->visible) && (!c.getPos(a+(mover*i))->isavail))//if visible and ! avail contains chip | movement right cause 0-7 is left side of board
                     {
-                        std::cout<<c.getPos(a+(mover*i))->index<<"\t"<<visibleness(c,c.getPos(a+(mover*i))->index)[1]<<"\n";
+                        std::cout<<c.getPos(a+(mover*i))->index<<"\n";
 
-                        if (visibleness(c,c.getPos(a+(mover*i))->index)[0]!=-1){std::cout<<"yay";}
+                        if (visibleness(c,c.getPos(a+(mover*i))->index,false)[0]!=-1){std::cout<<"yay\n";}
 
-                        if (visibleness(c,c.getPos(a+(mover*i))->index)[1]!=-1){std::cout<<"yay1";}
+                        if (visibleness(c,c.getPos(a+(mover*i))->index,false)[1]!=-1){std::cout<<"yay1\n";}
 
-                        if (visibleness(c,c.getPos(a+(mover*i))->index)[2]!=-1){std::cout<<"yay2";}
+                        if (visibleness(c,c.getPos(a+(mover*i))->index,false)[2]!=-1){std::cout<<"yay2\n";}
 
-                        if (visibleness(c,c.getPos(a+(mover*i))->index)[3]!=-1){std::cout<<"yay3";}
+                        if (visibleness(c,c.getPos(a+(mover*i))->index,false)[3]!=-1){std::cout<<"yay3\n";}
 
-                        if (visibleness(c,c.getPos(a+(mover*i))->index)[4]!=-1){std::cout<<"yay4";}
+                        if (visibleness(c,c.getPos(a+(mover*i))->index,false)[4]!=-1){std::cout<<"yay4\n";}
 
-                        if (visibleness(c,c.getPos(a+(mover*i))->index)[5]!=-1){std::cout<<"yay5";}
+                        if (visibleness(c,c.getPos(a+(mover*i))->index,false)[5]!=-1){std::cout<<"yay5\n";}
 
-                        if (visibleness(c,c.getPos(a+(mover*i))->index)[6]!=-1){std::cout<<"yay6";}
+                        if (visibleness(c,c.getPos(a+(mover*i))->index,false)[6]!=-1){std::cout<<"yay6\n";}
 
-                        if (visibleness(c,c.getPos(a+(mover*i))->index)[7]!=-1){std::cout<<"yay7";}
+                        if (visibleness(c,c.getPos(a+(mover*i))->index,false)[7]!=-1){std::cout<<"yay7\n";}
                         //if this outputs the available cells, we can just check these cells for if theyre in a line, and if their line has no spaces. if no spaces, check if same two colors are on the line end, and if they are, then color the whole line to the color of those two ends.
                     }
             }
