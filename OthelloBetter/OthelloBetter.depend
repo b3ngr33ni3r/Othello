@@ -131,7 +131,7 @@
 	"chips.h"
 	"click.h"
 
-1320639080 c:\users\b3n\documents\codeblocks projects\othellobetter\chips.h
+1320854247 c:\users\b3n\documents\codeblocks projects\othellobetter\chips.h
 	<SFML/Graphics.hpp>
 
 1319480216 c:\users\b3n\documents\codeblocks projects\othellobetter\click.h
@@ -199,7 +199,7 @@
 	<string>
 	<fstream>
 
-1320685740 source:c:\users\b3n\documents\codeblocks projects\othellobetter\logic.cpp
+1320686118 source:c:\users\b3n\documents\codeblocks projects\othellobetter\logic.cpp
 	"logic.h"
 	"chips.h"
 	"board.h"

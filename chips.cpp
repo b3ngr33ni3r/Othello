@@ -7,17 +7,23 @@ Chips::Chips()
 {
 
 chip *head = NULL;
+pathfinder_array *head2 = NULL;
 
+pathfinder_int=0;
 totalCells=0;
 totalSpaces=0;
 }
 
 
-Chips::chip* Chips::getPos(int n)//should return list[n]   aka list of n aka cell number n
+Chips::chip* Chips::getPos(int n,bool other=false)//should return list[n]   aka list of n aka cell number n
 {
     //display();
     int counter=0;
+    if (!other)
     chip *list = head;
+    else
+    pathfinder_array *list=head2;
+
 	while((list) && (counter<n) && (n<64) &&(n>-1))
 	{
         list=list->next;
@@ -46,7 +52,8 @@ void Chips::setClicked(int n,sf::Color color)
 
 
 // only for the 1st Node
-void Chips::initNode(int xa,int xb, int ya, int yb){
+void Chips::initNode(int xa,int xb=0, int ya=0, int yb=0,bool other=false){
+    if (!other){
     head=new chip;
     head->x = xa;
 	head->x2 = xb;
@@ -58,11 +65,20 @@ void Chips::initNode(int xa,int xb, int ya, int yb){
 	head->isp1=false;
 	head->visible=false;
 	//std::cout<<Chips::totalCells<<"|";
-
+    }
+else
+    {
+    head2=new pathfinder_array;
+    head2->index=pathfinder_int;
+    pathfinder_int++;
+    head2->cnum=xa;
+    head2->next=NULL;
+    }
 }
 
 //for not first node
-void Chips::addNode(int xa,int xb, int ya, int yb) {
+void Chips::addNode(int xa,int xb=0, int ya=0, int yb=0,bool other=false) {
+	if (!other){
 	chip *newNode = new chip;
 	newNode->x = xa;
 	newNode->isavail=false;
@@ -81,6 +97,27 @@ void Chips::addNode(int xa,int xb, int ya, int yb) {
 			return;
 		}
 		cur = cur->next;
+	}
+
+	}else{
+
+	pathfinder_array *newNode = new chip;
+	newNode->index=pathfinder_int;
+	newNode->next = NULL;
+	newNode->cnum = xa;
+
+	pathfinder_array *cur = head2;
+	while(cur) {
+		if(cur->next == NULL) {
+			cur->next = newNode;
+			return;
+		}
+		cur = cur->next;
+	}
+
+
+
+
 	}
 
 }
