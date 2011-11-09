@@ -15,13 +15,28 @@ totalSpaces=0;
 }
 
 
-Chips::chip* Chips::getPos(int n,bool other=false)//should return list[n]   aka list of n aka cell number n
+Chips::chip* Chips::getPos(int n)//should return list[n]   aka list of n aka cell number n
 {
     //display();
     int counter=0;
-    if (!other)
+
     chip *list = head;
-    else
+
+//    pathfinder_array *list=head2;
+
+	while((list) && (counter<n) && (n<64) &&(n>-1))
+	{
+        list=list->next;
+        counter++;
+	}
+
+	return list;
+}
+
+Chips::pathfinder_array* Chips::getPos(int n,bool other)//should return list[n]   aka list of n aka cell number n
+{
+    //display();
+    int counter=0;
     pathfinder_array *list=head2;
 
 	while((list) && (counter<n) && (n<64) &&(n>-1))
@@ -32,6 +47,7 @@ Chips::chip* Chips::getPos(int n,bool other=false)//should return list[n]   aka 
 
 	return list;
 }
+
 
 
 void Chips::setClicked(int n,sf::Color color)
@@ -101,7 +117,7 @@ void Chips::addNode(int xa,int xb=0, int ya=0, int yb=0,bool other=false) {
 
 	}else{
 
-	pathfinder_array *newNode = new chip;
+	pathfinder_array *newNode = new pathfinder_array;
 	newNode->index=pathfinder_int;
 	newNode->next = NULL;
 	newNode->cnum = xa;
@@ -137,6 +153,19 @@ void Chips::addCell(int xa,int xb,int ya, int yb)
  Chips::totalCells++;
 }
 
+void Chips::addCell(int xa,bool is)
+{
+
+ if (pathfinder_int==0)
+ {
+     initNode(xa,true);
+ }else
+ {
+     addNode(xa,true);
+ }
+
+
+}
 
 
 
@@ -246,3 +275,49 @@ void Chips::setP1(int n,bool set)
     }
     head=temp;
 }
+
+
+
+bool Chips::is_gamepiece(int cell)
+{
+    if ((getPos(cell)->isavail)&&(getPos(cell)->visible)&&(cell>-1)&&(cell<64))
+    return true;
+    else
+    return false;
+}
+
+
+bool Chips::does_colormatch(int cell, bool ISP1)
+{
+    if (getPos(cell)->isp1==ISP1)
+    return true;
+    else
+    return false;
+}
+
+
+
+
+
+                ////////////////////////////////////////////////////
+
+ //check valid directions, pick a valid direction, stick with it. check if valid cell found in that direction, check tht cells color, if same
+//check valid direction (same as b4) check if valid cell found, check color(should be op).  kill on color diff or no cell. on same cell color, set line color
+
+
+                bool Chips::path(int init,int newdirection)
+                {
+                if (is_gamepiece(init+newdirection))//mimic above
+                    {
+                        std::cout<<getPos(init+newdirection)->index<<"\n";
+
+                         if (!does_colormatch(init+newdirection,getPos(init)->isp1))
+                            return path((init+newdirection),newdirection);
+                        else
+                            return true;
+                    }
+                    else
+                        return false;
+
+                }
+                /////////////////////////////////////////////////////

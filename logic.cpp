@@ -299,7 +299,7 @@ int iterator=b.LENGTH/b.INCREMENT;
 
             if (i>0)
             {
-                if((c.getPos(a+(mover*i))->visible) && (!c.getPos(a+(mover*i))->isavail))//if visible and ! avail contains chip | movement right cause 0-7 is left side of board
+                if(c.is_gamepiece(a+(mover*i)))//if visible and ! avail contains chip | movement right cause 0-7 is left side of board
                     {
                         std::cout<<c.getPos(a+(mover*i))->index<<"\n";
 
@@ -323,10 +323,8 @@ int iterator=b.LENGTH/b.INCREMENT;
             }
             else
             {
-                if ((c.getPos(i)->visible)&&((!c.getPos(i)->isavail)))//mimic above
-                    {
-                        std::cout<<c.getPos(i)->index<<"\n";
-                    }
+
+
             }
         }
     }
@@ -335,3 +333,8 @@ int iterator=b.LENGTH/b.INCREMENT;
 
 
 }
+
+
+
+
+

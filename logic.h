@@ -17,6 +17,9 @@ class Logic
     std::string intoString(int i);
     void scanner(Board& callBoardFunction,Chips& callChipsFunction,Click& click,sf::RenderWindow& Game,bool callback);
     void pathfinder(Chips& c,Board& b,int mover);
+
+
+
     protected:
     private:
     int six[8];//array to return valid directions
