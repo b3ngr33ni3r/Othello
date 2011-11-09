@@ -305,7 +305,7 @@ bool Chips::does_colormatch(int cell, bool ISP1)
 //check valid direction (same as b4) check if valid cell found, check color(should be op).  kill on color diff or no cell. on same cell color, set line color
 
 
-                bool Chips::path(int init,int newdirection)
+                int Chips::path(int init,int newdirection)
                 {
                 if (is_gamepiece(init+newdirection))//mimic above
                     {
@@ -314,10 +314,10 @@ bool Chips::does_colormatch(int cell, bool ISP1)
                          if (!does_colormatch(init+newdirection,getPos(init)->isp1))
                             return path((init+newdirection),newdirection);
                         else
-                            return true;
+                            return (init+newdirection);
                     }
                     else
-                        return false;
+                        return -1;
 
                 }
                 /////////////////////////////////////////////////////

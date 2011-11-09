@@ -31,7 +31,7 @@ class Chips
 
     bool is_gamepiece(int cell);
     bool does_colormatch(int cell, bool ISP1);
-    bool path(int init, int newdirection);
+    int path(int init, int newdirection);
 
 
     protected:
