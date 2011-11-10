@@ -1,0 +1,4 @@
+NOTES:
+
+its a little glitchy finding available cells for movement 11/10/11
+
