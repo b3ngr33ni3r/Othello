@@ -5,22 +5,22 @@
 		<Cursor position="2275" topLine="57" />
 	</File>
 	<File name="..\board.h" open="1" top="0" tabpos="14">
-		<Cursor position="859" topLine="16" />
+		<Cursor position="859" topLine="13" />
 	</File>
-	<File name="..\chips.cpp" open="1" top="1" tabpos="4">
-		<Cursor position="5840" topLine="291" />
+	<File name="..\chips.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="4929" topLine="288" />
 	</File>
 	<File name="..\chips.h" open="1" top="0" tabpos="5">
-		<Cursor position="997" topLine="7" />
+		<Cursor position="343" topLine="7" />
 	</File>
 	<File name="..\click.cpp" open="1" top="0" tabpos="6">
 		<Cursor position="330" topLine="0" />
 	</File>
 	<File name="..\draw.cpp" open="1" top="0" tabpos="9">
-		<Cursor position="278" topLine="5" />
+		<Cursor position="278" topLine="2" />
 	</File>
 	<File name="..\events.cpp" open="1" top="0" tabpos="8">
-		<Cursor position="2110" topLine="29" />
+		<Cursor position="2110" topLine="26" />
 	</File>
 	<File name="..\events.h" open="1" top="0" tabpos="13">
 		<Cursor position="320" topLine="0" />
@@ -31,8 +31,8 @@
 	<File name="..\logfile.h" open="1" top="0" tabpos="10">
 		<Cursor position="418" topLine="0" />
 	</File>
-	<File name="..\logic.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="12104" topLine="308" />
+	<File name="..\logic.cpp" open="1" top="1" tabpos="3">
+		<Cursor position="12079" topLine="299" />
 	</File>
 	<File name="..\logic.h" open="1" top="0" tabpos="12">
 		<Cursor position="806" topLine="0" />
@@ -41,6 +41,6 @@
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="..\render.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="1315" topLine="16" />
+		<Cursor position="1315" topLine="13" />
 	</File>
 </CodeBlocks_layout_file>
