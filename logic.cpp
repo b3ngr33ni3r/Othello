@@ -323,7 +323,7 @@ int iterator=b.LENGTH/b.INCREMENT;
             }
             else
             {
-
+                    std::cout<<c.path(i,movement::moveUp);
 
             }
         }
