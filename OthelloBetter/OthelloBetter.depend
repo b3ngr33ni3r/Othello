@@ -143,7 +143,7 @@
 	"chips.h"
 	"click.h"
 
-1320882287 source:c:\users\b3n\documents\codeblocks projects\othellobetter\chips.cpp
+1320971682 source:c:\users\b3n\documents\codeblocks projects\othellobetter\chips.cpp
 	"chips.h"
 	"logfile.h"
 	<iostream>
@@ -199,7 +199,7 @@
 	<string>
 	<fstream>
 
-1320882370 source:c:\users\b3n\documents\codeblocks projects\othellobetter\logic.cpp
+1320972996 source:c:\users\b3n\documents\codeblocks projects\othellobetter\logic.cpp
 	"logic.h"
 	"chips.h"
 	"board.h"
