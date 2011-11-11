@@ -296,11 +296,11 @@ int iterator=b.LENGTH/b.INCREMENT;
     {
         for (int a=0;a<=iterator; a++)
         {
+            std::cout<<"\tStartingSCAN\t";
 
             if (i>0)
             {
-                if(c.is_gamepiece(a+(mover*i)))//if visible and ! avail contains chip | movement right cause 0-7 is left side of board
-                    {
+
 
                         std::cout<<c.path(a+(i*mover),movement::moveUp)<<"|"<<a+(i*mover)<<"|";
                         /*std::cout<<c.getPos(a+(mover*i))->index<<"\n";
@@ -321,13 +321,16 @@ int iterator=b.LENGTH/b.INCREMENT;
 
                         if (visibleness(c,c.getPos(a+(mover*i))->index,false)[7]!=-1){std::cout<<"yay7\n";}
                         //if this outputs the available cells, we can just check these cells for if theyre in a line, and if their line has no spaces. if no spaces, check if same two colors are on the line end, and if they are, then color the whole line to the color of those two ends.
-                    */}
+                    */
             }
             else
             {
                     std::cout<<c.path(i,movement::moveUp)<<"|"<<i<<"|";
 
             }
+
+            std::cout<<"\tEndingScan\n";
+
         }
     }
 

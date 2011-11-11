@@ -309,7 +309,7 @@ bool Chips::does_colormatch(int cell, bool ISP1)
                 {
                 if (is_gamepiece(init+newdirection))
                     {
-                         //std::cout<<getPos(init+newdirection)->index<<"\n";
+                         std::cout<<init<<" is valid\n";
 
                          if (does_colormatch(init+newdirection,getPos(init)->isp1))
                             return path((init+newdirection),newdirection);
