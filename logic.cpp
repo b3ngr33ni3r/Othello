@@ -291,12 +291,12 @@ void Logic::pathfinder(Chips& c,Board& b,int mover)//want this to be scalable, f
 {
 //check each row
 int iterator=b.LENGTH/b.INCREMENT;
-
+std::cout<<"\tStartingSCAN\t";
     for (int i=0;i<=iterator;i++)
     {
         for (int a=0;a<=iterator; a++)
         {
-            std::cout<<"\tStartingSCAN\t";
+
 
             if (i>0)
             {
@@ -329,13 +329,13 @@ int iterator=b.LENGTH/b.INCREMENT;
 
             }
 
-            std::cout<<"\tEndingScan\n";
+
 
         }
     }
 
 
-
+std::cout<<"\tEndingScan\n";
 
 }
 
