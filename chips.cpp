@@ -313,7 +313,7 @@ bool Chips::does_colormatch(int cell, bool ISP1)
 
                          if (does_colormatch(init+newdirection,getPos(init)->isp1))
                          {
-                            std::cout<<" and is also the correct color";
+                            std::cout<<" and is also the correct color\n";
                             return path((init+newdirection),newdirection);
                          }else
                             return (init+newdirection);
