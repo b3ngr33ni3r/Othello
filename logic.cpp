@@ -341,6 +341,8 @@ std::cout<<"\tStartingSCAN\t";
             }
 
     //after first move you can only move where u can move to flip a chip
+    //check for othercolor nearbye, if found, what is the direction? that direction, use that othercolor->index and run the check again. if line terminates,
+    //and no !othercolor (samecolor) is found, then no flipping. otherwise, flipping (set isp1=samecolor->isp1)
 
         }
     }
