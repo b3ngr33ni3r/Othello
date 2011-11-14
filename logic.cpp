@@ -340,7 +340,7 @@ std::cout<<"\tStartingSCAN\t";
 
             }
 
-
+    //after first move you can only move where u can move to flip a chip
 
         }
     }
