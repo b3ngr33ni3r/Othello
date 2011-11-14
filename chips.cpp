@@ -5,7 +5,7 @@
 
 Chips::Chips()
 {
-
+//Default constructor for Chips
 chip *head = NULL;
 pathfinder_array *head2 = NULL;
 
@@ -14,7 +14,9 @@ totalCells=0;
 totalSpaces=0;
 }
 
-
+/*
+* returns an entire element of the chip list, the element of int VERY USEFUL
+*/
 Chips::chip* Chips::getPos(int n)//should return list[n]   aka list of n aka cell number n
 {
     //display();
@@ -33,6 +35,10 @@ Chips::chip* Chips::getPos(int n)//should return list[n]   aka list of n aka cel
 	return list;
 }
 
+/*
+*   Trying to overload to allow returning a pathfinder_Array. probably wont use, seems difficult as hell
+*
+*/
 Chips::pathfinder_array* Chips::getPos(int n,bool other)//should return list[n]   aka list of n aka cell number n
 {
     //display();
@@ -49,7 +55,9 @@ Chips::pathfinder_array* Chips::getPos(int n,bool other)//should return list[n] 
 }
 
 
-
+/*
+* set a cell (int) to have been clicked (->visible), and also assign its draw color to it (though im not sure i do this)
+*/
 void Chips::setClicked(int n,sf::Color color)
 {
     chip* temp=head;
@@ -66,8 +74,12 @@ void Chips::setClicked(int n,sf::Color color)
 }
 
 
-
+/*
 // only for the 1st Node
+* The following functions are used for node manipulation, adding to chips and (maybe) pathfinder_array
+* this initNode is used to add the first element only, as it is a differnet condition
+* i overloaded it with a defualt bool value so i could use it as pathfinder_array, but i dont think im gunna
+*/
 void Chips::initNode(int xa,int xb=0, int ya=0, int yb=0,bool other=false){
     if (!other){
     head=new chip;
@@ -92,7 +104,11 @@ else
     }
 }
 
+/*
 //for not first node
+* For every other node, also to add.
+* same as above overloaded with a default bool to allow possible (though unlikely) use of pathfinder_Array
+*/
 void Chips::addNode(int xa,int xb=0, int ya=0, int yb=0,bool other=false) {
 	if (!other){
 	chip *newNode = new chip;
@@ -138,7 +154,7 @@ void Chips::addNode(int xa,int xb=0, int ya=0, int yb=0,bool other=false) {
 
 }
 
-
+//whats actually called to add to the chips, because this determines which adder to use
 void Chips::addCell(int xa,int xb,int ya, int yb)
 {
 
@@ -153,6 +169,7 @@ void Chips::addCell(int xa,int xb,int ya, int yb)
  Chips::totalCells++;
 }
 
+//overloaded addCell to allow (possible though unlikey) use of pathfinder_Array
 void Chips::addCell(int xa,bool is)
 {
 
@@ -168,7 +185,10 @@ void Chips::addCell(int xa,bool is)
 }
 
 
-
+/*
+* writes the entire chip array to a file at a momemnts notice, also verbally, to the console
+* useful to see list at any given time
+*/
 void Chips::display() {
 	logfile log;
 	chip *list = head;
@@ -200,7 +220,9 @@ void Chips::display() {
 
 
 
-
+/*
+* called to set int (cell) to be a valid place to move, containing no chip, but a valid move marker
+*/
 void Chips::setMovehere(int n)
 {
       chip* temp=head;
@@ -216,6 +238,7 @@ void Chips::setMovehere(int n)
     head=temp;
 }
 
+//resets (reverses) the above
 void Chips::resetMoveVis(int n)
 {
       chip* temp=head;
@@ -231,7 +254,7 @@ void Chips::resetMoveVis(int n)
 
 
 
-
+//returns how many cells are placed on the board
 int Chips::getClickedTotal()
 {
     int counter=0;
@@ -244,7 +267,7 @@ int Chips::getClickedTotal()
 }
 
 
-
+//sets a chip (int n) ->isp1 value to true, indicatign it belongs to player 1
 void Chips::setP1(int n)
 {
           chip* temp=head;
@@ -260,7 +283,7 @@ void Chips::setP1(int n)
     head=temp;
 }
 
-
+//do above, but allow specifying a value for ->isp1
 void Chips::setP1(int n,bool set)
 {
           chip* temp=head;
@@ -277,7 +300,7 @@ void Chips::setP1(int n,bool set)
 }
 
 
-
+//returns whether a slot is a gamepeice
 bool Chips::is_gamepiece(int cell)
 {
     if ((getPos(cell)->isavail)&&(getPos(cell)->visible)&&(cell>-1)&&(cell<64))
@@ -286,7 +309,7 @@ bool Chips::is_gamepiece(int cell)
     return false;
 }
 
-
+//returns whether a cell is of the same color
 bool Chips::does_colormatch(int cell, bool ISP1)
 {
     if (getPos(cell)->isp1==ISP1)

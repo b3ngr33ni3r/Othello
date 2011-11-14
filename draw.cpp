@@ -4,12 +4,11 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 Draw::Draw()
-{
-
+{//the default constructor
 
 }
 
-
+//actually draw the board.
 int Draw::DrawBoard(sf::RenderWindow& MainWindow,Chips callChipsFunction,Click& click)
 {
 

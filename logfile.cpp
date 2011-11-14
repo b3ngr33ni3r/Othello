@@ -6,6 +6,19 @@
 #include <stdlib.h>
 #include <cstring>
 
+
+
+/*
+*   im not, NOT going to comment this file, because it does very little, in a lot of differnet ways
+*   basically, it logs things to all.log
+*   theres conversion functions, and write things.
+*/
+
+
+
+
+
+
 using namespace std;
 
 logfile::logfile()

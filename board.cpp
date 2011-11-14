@@ -7,7 +7,7 @@
 
 Board::Board(sf::RenderWindow& MainWindow,Chips& callChipsFunction)
 {
-
+//defualt constructor
 LENGTH=210;
 INCREMENT=30;
 xLENGTH=LENGTH+INCREMENT;//horozontal lines length
@@ -16,6 +16,7 @@ offsety=((MainWindow.GetHeight()/2)-(yLENGTH/2));
 offsetx=((MainWindow.GetWidth()/2)-(xLENGTH/2));
 wHeight=MainWindow.GetHeight();
 wWidth=MainWindow.GetWidth();
+//global variables f0r board shape
 
 //callChipsFunction=caller;
 addcell=true;
@@ -24,7 +25,7 @@ addcell=true;
 }
 
 
-
+//init the board
 int Board::start(Chips callChipsFunction)
 {
     int A=1+(LENGTH/INCREMENT);
@@ -63,6 +64,7 @@ callChipsFunction.setP1(cur->index);
 }
 
 
+//prepare the board for drawing
 int  Board::drawBoard(sf::RenderWindow& MainWindow,Chips& callChipsFunction,Click& click)
 {
 

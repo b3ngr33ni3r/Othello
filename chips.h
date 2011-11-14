@@ -10,8 +10,10 @@ class Chips
     struct chip{int x,y,x2,y2,index; sf::Color color; bool visible,isp1,isavail; chip* next; };
 
     struct pathfinder_array{int cnum,index; pathfinder_array* next;  };
+    //the structures
 
     chip *head; int totalCells; pathfinder_array *head2;
+    //the public vars
 
     int getClickedTotal();
     void setClicked(int n,sf::Color color);
@@ -32,7 +34,7 @@ class Chips
     bool is_gamepiece(int cell);
     bool does_colormatch(int cell, bool ISP1);
     int path(int init, int newdirection);
-
+    //the public functions
 
     protected:
     private:

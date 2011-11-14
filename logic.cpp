@@ -10,14 +10,25 @@ Logic::Logic()
     for (int i=0;i<8;i++)
 six[i]=-1;
 
+//make sure six array is all -1's, as this way directions will be able to be returned and found via array
 }
 
+
+/*
+*   this checks if the player is able to move in a diagonal manner, which as i understand is any time after the first time
+*   return true if they can move diagonally, false otherwise
+*/
 bool Logic::diagonalsAllowed(Chips& callChipsFunction)
 {
     return false;//this FIXES the issues with visibleness re: the 11-13 problem. although, we also need to allow diags sometimes, so this will need revision.
     if (callChipsFunction.getClickedTotal()>4){ return true;}else{return false;}
 }
 
+/*
+*   checks for all valid directions, and is used for checking pathfinding, and most importantly, scanning to determine which
+*   direction(s) the player can move
+*
+*/
 int* Logic::visibleness(Chips& callChipsFunction,int cell,bool visibleCheck=true)
 {
 
@@ -152,6 +163,10 @@ if (visibleCheck){
     return six;//0-3 is prime directions
 }
 
+/*
+*   This function contains nothing, and does nothing, im just afraid removing it might cause lots of problems.
+*   so for now im just having it do nothing
+*/
  void Logic::setCellsMovables(int cell,Chips& callChipsFunction,Board& board,Click& click) //if you can move there, awesome, add it to available list as visible
  {
 //do nothing. replaced by scanner
@@ -159,7 +174,11 @@ if (visibleCheck){
  }
 
 
-
+/*
+*   returuns the index of a cell based on any xy coordinates
+*   very useful, though ideally it would be relocated to Chips
+*
+*/
 int Logic::returnCell(int xa,int ya,Chips& callChipsFunction,Board& board)
  {
 
@@ -181,6 +200,9 @@ while(list)
 return -1; //not found
  }
 
+/*
+* i was using this to log to a file, and i needed a string instead of an int. not being used now...
+*/
 std::string Logic::intoString(int i)
 {
     std::stringstream ss;//create a stringstream
@@ -190,7 +212,10 @@ std::string Logic::intoString(int i)
 
 }
 
-
+/*
+*   Does all the heeavy lfiting, finding cells nearby drawable locations, for each player, and marking them ->isavil and ->isp1 accordingly
+*   kind of a big deal. ideally might be located in Board
+*/
 void Logic::scanner(Board& callBoardFunction,Chips& callChipsFunction,Click& click,sf::RenderWindow& Game,bool callback)
 {
 
@@ -286,7 +311,11 @@ free(list);
 }
 
 
-
+/*
+*   Suposed to be able to check a path by being giving a direction of movement
+*   doesn't work. struggling here. do i need to give a starting cell too? probably would help...
+*   rather then trying to scan whole board, maybe i should do that?
+*/
 void Logic::pathfinder(Chips& c,Board& b,int mover)//want this to be scalable, for any boardsize
 {
 //check each row
@@ -303,25 +332,7 @@ std::cout<<"\tStartingSCAN\t";
 
 
                         std::cout<<c.path(a+(i*mover),movement::moveUp)<<"|"<<a+(i*mover)<<"|";
-                        /*std::cout<<c.getPos(a+(mover*i))->index<<"\n";
 
-                        if (visibleness(c,c.getPos(a+(mover*i))->index,false)[0]!=-1){std::cout<<"yay\n";}
-
-                        if (visibleness(c,c.getPos(a+(mover*i))->index,false)[1]!=-1){std::cout<<"yay1\n";}
-
-                        if (visibleness(c,c.getPos(a+(mover*i))->index,false)[2]!=-1){std::cout<<"yay2\n";}
-
-                        if (visibleness(c,c.getPos(a+(mover*i))->index,false)[3]!=-1){std::cout<<"yay3\n";}
-
-                        if (visibleness(c,c.getPos(a+(mover*i))->index,false)[4]!=-1){std::cout<<"yay4\n";}
-
-                        if (visibleness(c,c.getPos(a+(mover*i))->index,false)[5]!=-1){std::cout<<"yay5\n";}
-
-                        if (visibleness(c,c.getPos(a+(mover*i))->index,false)[6]!=-1){std::cout<<"yay6\n";}
-
-                        if (visibleness(c,c.getPos(a+(mover*i))->index,false)[7]!=-1){std::cout<<"yay7\n";}
-                        //if this outputs the available cells, we can just check these cells for if theyre in a line, and if their line has no spaces. if no spaces, check if same two colors are on the line end, and if they are, then color the whole line to the color of those two ends.
-                    */
             }
             else
             {

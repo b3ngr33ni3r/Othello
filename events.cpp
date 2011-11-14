@@ -9,11 +9,11 @@
 
 Events::Events()
 {
-
+//Default constructor
 
 }
 
-
+//the loop that runs EVERYTHING that pertains to input from the user, and do keycalls, etc.
 int Events::EventsLoop(sf::RenderWindow& Win,const sf::Input& InputStream,Chips& ChipCaller,Board& board, Logic& logical,Click& click,bool& scannerCallback)
 {
         sf::Event Event;

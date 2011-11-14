@@ -9,7 +9,7 @@ int main()
 
 Render all;
 all.Renderer();
-
+//this is the call to the Render that runs the loop that is occuring whilst the window is open
 
 
 }

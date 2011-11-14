@@ -5,11 +5,11 @@
 
 Write::Write()
 {
-
+//default constructor
 
 }
 
-
+//write a sentence to the game window at position x y
 void Write::sentence(std::string in,sf::RenderWindow& Win,int x,int y)
 {
 
