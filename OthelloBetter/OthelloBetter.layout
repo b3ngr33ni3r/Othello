@@ -25,14 +25,20 @@
 	<File name="..\events.h" open="0" top="0" tabpos="13">
 		<Cursor position="320" topLine="0" />
 	</File>
+	<File name="..\framework.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="66" topLine="0" />
+	</File>
+	<File name="..\framework.h" open="1" top="0" tabpos="2">
+		<Cursor position="0" topLine="0" />
+	</File>
 	<File name="..\logfile.cpp" open="0" top="0" tabpos="11">
 		<Cursor position="345" topLine="0" />
 	</File>
 	<File name="..\logfile.h" open="0" top="0" tabpos="10">
 		<Cursor position="418" topLine="0" />
 	</File>
-	<File name="..\logic.cpp" open="0" top="0" tabpos="3">
-		<Cursor position="11593" topLine="324" />
+	<File name="..\logic.cpp" open="1" top="1" tabpos="3">
+		<Cursor position="12538" topLine="321" />
 	</File>
 	<File name="..\logic.h" open="0" top="0" tabpos="12">
 		<Cursor position="806" topLine="0" />

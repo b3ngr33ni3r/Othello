@@ -43,6 +43,8 @@
 		<Unit filename="..\draw.h" />
 		<Unit filename="..\events.cpp" />
 		<Unit filename="..\events.h" />
+		<Unit filename="..\framework.cpp" />
+		<Unit filename="..\framework.h" />
 		<Unit filename="..\logfile.cpp" />
 		<Unit filename="..\logfile.h" />
 		<Unit filename="..\logic.cpp" />
