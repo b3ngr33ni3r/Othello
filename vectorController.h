@@ -16,12 +16,15 @@ class vectorController
             map<string,sf::Color> color;
             };
 
-        vectorController();
+
         void newNode();
+        static vectorController* get();
         vector <node> cells;
 
     protected:
+    vectorController();
     private:
+    static vectorController* pointer_to_vectorController;
 
 };
 

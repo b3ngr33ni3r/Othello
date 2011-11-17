@@ -11,10 +11,10 @@ class framework
 {
     public:
         framework();
-
+        void init_board();
     protected:
     private:
-        vectorController vector_clone;
+        int NUMBERCELLS;
 };
 
 #endif // FRAMEWORK_H
