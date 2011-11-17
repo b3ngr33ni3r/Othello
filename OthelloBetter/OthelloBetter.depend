@@ -236,14 +236,16 @@
 	<string>
 	<iostream>
 
-1321562605 source:c:\users\b3n\documents\codeblocks projects\othellobetter\framework.cpp
+1321570307 source:c:\users\b3n\documents\codeblocks projects\othellobetter\framework.cpp
 	"framework.h"
 	"vectorController.h"
+	<SFML/Graphics.hpp>
 
-1321561895 c:\users\b3n\documents\codeblocks projects\othellobetter\framework.h
+1321570122 c:\users\b3n\documents\codeblocks projects\othellobetter\framework.h
 	"vectorController.h"
+	<SFML/Graphics.hpp>
 
-1321507138 source:c:\users\b3n\documents\codeblocks projects\othellobetter\vectorcontroller.cpp
+1321562753 source:c:\users\b3n\documents\codeblocks projects\othellobetter\vectorcontroller.cpp
 	"vectorcontroller.h"
 	<vector>
 	<map>
