@@ -11,7 +11,7 @@ class vectorController
     public:
 
          struct node{
-            map<string,int> integer;
+            map<string,int> integer;    //Hey ben, soup=Sup) cout << soup;
             map<string,bool> boolean;
             map<string,sf::Color> color;
             };

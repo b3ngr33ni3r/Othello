@@ -52,8 +52,6 @@
 		<Unit filename="..\main.cpp" />
 		<Unit filename="..\render.cpp" />
 		<Unit filename="..\render.h" />
-		<Unit filename="..\vectorController.cpp" />
-		<Unit filename="..\vectorController.h" />
 		<Unit filename="..\write.cpp" />
 		<Unit filename="..\write.h" />
 		<Extensions>

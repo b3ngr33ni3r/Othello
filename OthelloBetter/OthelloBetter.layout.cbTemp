@@ -5,7 +5,7 @@
 		<Cursor position="2124" topLine="67" />
 	</File>
 	<File name="..\board.h" open="0" top="0" tabpos="14">
-		<Cursor position="34" topLine="0" />
+		<Cursor position="859" topLine="13" />
 	</File>
 	<File name="..\chips.cpp" open="0" top="0" tabpos="4">
 		<Cursor position="6310" topLine="291" />
@@ -25,10 +25,10 @@
 	<File name="..\events.h" open="0" top="0" tabpos="13">
 		<Cursor position="320" topLine="0" />
 	</File>
-	<File name="..\framework.cpp" open="0" top="0" tabpos="1">
+	<File name="..\framework.cpp" open="1" top="0" tabpos="1">
 		<Cursor position="66" topLine="0" />
 	</File>
-	<File name="..\framework.h" open="0" top="0" tabpos="2">
+	<File name="..\framework.h" open="1" top="0" tabpos="2">
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="..\logfile.cpp" open="0" top="0" tabpos="11">
@@ -37,7 +37,7 @@
 	<File name="..\logfile.h" open="0" top="0" tabpos="10">
 		<Cursor position="418" topLine="0" />
 	</File>
-	<File name="..\logic.cpp" open="0" top="0" tabpos="3">
+	<File name="..\logic.cpp" open="1" top="1" tabpos="3">
 		<Cursor position="12538" topLine="321" />
 	</File>
 	<File name="..\logic.h" open="0" top="0" tabpos="12">
@@ -48,12 +48,6 @@
 	</File>
 	<File name="..\render.cpp" open="0" top="0" tabpos="2">
 		<Cursor position="2437" topLine="36" />
-	</File>
-	<File name="..\vectorController.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="133" topLine="0" />
-	</File>
-	<File name="..\vectorController.h" open="1" top="1" tabpos="0">
-		<Cursor position="281" topLine="3" />
 	</File>
 	<File name="..\write.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="194" topLine="0" />
