@@ -118,7 +118,7 @@
 
 1319320026 c:\users\b3n\documents\codeblocks projects\othellobetter\ai.h
 
-1320638568 source:c:\users\b3n\documents\codeblocks projects\othellobetter\board.cpp
+1321245312 source:c:\users\b3n\documents\codeblocks projects\othellobetter\board.cpp
 	"board.h"
 	"chips.h"
 	"draw.h"
@@ -131,7 +131,7 @@
 	"chips.h"
 	"click.h"
 
-1320871918 c:\users\b3n\documents\codeblocks projects\othellobetter\chips.h
+1321244990 c:\users\b3n\documents\codeblocks projects\othellobetter\chips.h
 	<SFML/Graphics.hpp>
 
 1319480216 c:\users\b3n\documents\codeblocks projects\othellobetter\click.h
@@ -143,26 +143,26 @@
 	"chips.h"
 	"click.h"
 
-1320973625 source:c:\users\b3n\documents\codeblocks projects\othellobetter\chips.cpp
+1321244960 source:c:\users\b3n\documents\codeblocks projects\othellobetter\chips.cpp
 	"chips.h"
 	"logfile.h"
 	<iostream>
 	<SFML/Graphics.hpp>
 
-1319491156 source:c:\users\b3n\documents\codeblocks projects\othellobetter\click.cpp
+1321245190 source:c:\users\b3n\documents\codeblocks projects\othellobetter\click.cpp
 	"click.h"
 	"chips.h"
 	<iostream>
 	<SFML/Graphics.hpp>
 
-1320431120 source:c:\users\b3n\documents\codeblocks projects\othellobetter\draw.cpp
+1321245406 source:c:\users\b3n\documents\codeblocks projects\othellobetter\draw.cpp
 	"draw.h"
 	"chips.h"
 	"click.h"
 	<SFML/Graphics.hpp>
 	<iostream>
 
-1320684443 source:c:\users\b3n\documents\codeblocks projects\othellobetter\events.cpp
+1321245389 source:c:\users\b3n\documents\codeblocks projects\othellobetter\events.cpp
 	"events.h"
 	"chips.h"
 	"logic.h"
@@ -186,7 +186,7 @@
 	<string>
 	<SFML/Graphics.hpp>
 
-1320314001 source:c:\users\b3n\documents\codeblocks projects\othellobetter\logfile.cpp
+1321245499 source:c:\users\b3n\documents\codeblocks projects\othellobetter\logfile.cpp
 	"logfile.h"
 	<iostream>
 	<string>
@@ -199,7 +199,7 @@
 	<string>
 	<fstream>
 
-1321153069 source:c:\users\b3n\documents\codeblocks projects\othellobetter\logic.cpp
+1321310648 source:c:\users\b3n\documents\codeblocks projects\othellobetter\logic.cpp
 	"logic.h"
 	"chips.h"
 	"board.h"
@@ -208,14 +208,14 @@
 	<sstream>
 	<iostream>
 
-1319320210 source:c:\users\b3n\documents\codeblocks projects\othellobetter\main.cpp
+1321244289 source:c:\users\b3n\documents\codeblocks projects\othellobetter\main.cpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	"render.h"
 
 1319320220 c:\users\b3n\documents\codeblocks projects\othellobetter\render.h
 
-1320432082 source:c:\users\b3n\documents\codeblocks projects\othellobetter\render.cpp
+1321244286 source:c:\users\b3n\documents\codeblocks projects\othellobetter\render.cpp
 	"render.h"
 	"events.h"
 	"board.h"
@@ -230,9 +230,26 @@
 	<SFML/Graphics.hpp>
 	<string>
 
-1319479574 source:c:\users\b3n\documents\codeblocks projects\othellobetter\write.cpp
+1321245536 source:c:\users\b3n\documents\codeblocks projects\othellobetter\write.cpp
 	"write.h"
 	<SFML/Graphics.hpp>
 	<string>
 	<iostream>
+
+1321307615 source:c:\users\b3n\documents\codeblocks projects\othellobetter\framework.cpp
+	"framework.h"
+
+1321307614 c:\users\b3n\documents\codeblocks projects\othellobetter\framework.h
+
+1321507138 source:c:\users\b3n\documents\codeblocks projects\othellobetter\vectorcontroller.cpp
+	"vectorcontroller.h"
+	<vector>
+	<map>
+	<string>
+
+1321508731 c:\users\b3n\documents\codeblocks projects\othellobetter\vectorcontroller.h
+	<vector>
+	<map>
+	<string>
+	<SFML/Graphics.hpp>
 
