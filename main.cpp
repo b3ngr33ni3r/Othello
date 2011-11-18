@@ -6,6 +6,19 @@
 
 using namespace std;
 
+namespace movement{
+    enum{
+    moveUp=-1,
+    moveDown=1,
+    moveLeft=-8,
+    moveRight=8,
+    diagUL=-9,
+    diagDL=-7,
+    diagUR=7,
+    diagDR=9
+    };}
+
+
 int main()
 {
 
@@ -14,6 +27,7 @@ int main()
 //this is the call to the Render that runs the loop that is occuring whilst the window is open
 sf::RenderWindow window(sf::VideoMode(800, 600, 32), "Othello");
  sf::Event Event;
+const sf::Input& InputStream = window.GetInput();
 
 framework frame(window);
 frame.init_board();
@@ -40,6 +54,17 @@ while(window.IsOpened()){
         {
          if ((Event.Type == sf::Event::Closed)||((Event.Type == sf::Event::KeyReleased)&&(Event.Key.Code == sf::Key::Escape)))
             window.Close();
+
+ if (Event.Type==sf::Event::MouseButtonPressed)
+            {
+                if (-1!=frame.returnCell(InputStream.GetMouseX(),InputStream.GetMouseY()))
+                    {
+                        int current_cell=frame.returnCell(InputStream.GetMouseX(),InputStream.GetMouseY());
+                        cout<<"clicked "<<current_cell<<"\n";
+                        vectorController::get()->cells[current_cell].boolean["visible"]=true;
+                    }
+            }
+
 
         }
         window.Display();

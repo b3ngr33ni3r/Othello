@@ -14,6 +14,7 @@ class framework
         framework(sf::RenderWindow& window);
         void init_board();
         void write_dimensions();
+        int returnCell(int x,int y);
     protected:
     private:
         int NUMBERCELLS,CELLWIDTH,CELLSPERROW,board_topleft_x,board_topleft_y;
