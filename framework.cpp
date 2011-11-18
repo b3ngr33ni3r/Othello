@@ -27,11 +27,13 @@ void framework::init_board()
 
         vectorController::get()->newNode();
         vectorController::get()->cells[i].boolean["visible"]=false;
+        vectorController::get()->cells[i].boolean["valid space"]=false;
 
         vectorController::get()->cells[i].color["cell bkg"]=sf::Color(37,158,6);
         vectorController::get()->cells[i].color["cell border"]=sf::Color(68,107,5);
         vectorController::get()->cells[i].color["chip color p1"]=sf::Color(255,255,255);
         vectorController::get()->cells[i].color["chip color p2"]=sf::Color(0,0,0);
+        vectorController::get()->cells[i].color["valid space color"]=sf::Color(10,20,30);
 
         vectorController::get()->cells[i].integer["chip radius addition"]=(CELLWIDTH/2);
         vectorController::get()->cells[i].integer["chip radius"]=10;

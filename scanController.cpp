@@ -19,8 +19,11 @@ scanController::scanController()
 
 bool scanController::direction_isvalid(int cell,int direction)
 {
-    if(vectorController::get()->cells[cell+direction].boolean["visible"])
+    if ((cell+direction>63) || (cell+direction<0))
     return false;
-    else
+
+    if(vectorController::get()->cells[cell+direction].integer["belongs to"]==0)
     return true;
+    else
+    return false;
 }
