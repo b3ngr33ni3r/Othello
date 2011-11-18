@@ -40,10 +40,12 @@ bool scanController::direction_isvalid(int cell,int direction,bool internal)
 bool scanController::cell_isoccupied(int cell)
 {
 
- if((vectorController::get()->cells[cell].integer["belongs to"]!=0)&&(vectorController::get()->cells[cell].boolean["visible"])&&(cell>=0)&&(cell<64))
+if ((cell>=0)&&(cell<64)){
+ if((vectorController::get()->cells[cell].integer["belongs to"]!=0)&&(vectorController::get()->cells[cell].boolean["visible"]))
      return true;
  else
      return false;
-
+}else
+    return false;
 
 }

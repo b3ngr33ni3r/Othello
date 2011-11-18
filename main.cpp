@@ -44,8 +44,12 @@ if (vectorController::get()->cells[i].boolean["valid space"]==true)
     cout<<"space valid="<<i;
 
 
-    if ((vectorController::get()->cells[i].integer["belongs to"]!=turns::get()->turn)&&(vectorController::get()->cells[i].integer["belongs to"]!=0))
-        window.Draw(sf::Shape::Circle(vectorController::get()->cells[i].integer["x"]+vectorController::get()->cells[i].integer["chip radius addition"],vectorController::get()->cells[i].integer["y"]+vectorController::get()->cells[i].integer["chip radius addition"],vectorController::get()->cells[i].integer["valid space radius"],vectorController::get()->cells[i].color["valid space color"]));
+    //if ((vectorController::get()->cells[i].integer["belongs to"]!=turns::get()->turn)&&(vectorController::get()->cells[i].integer["belongs to"]!=0))
+        window.Draw(sf::Shape::Circle(vectorController::get()->cells[i].integer["x"]+vectorController::get()->cells[i].integer["chip radius addition"],\
+                    vectorController::get()->cells[i].integer["y"]+vectorController::get()->cells[i].integer["chip radius addition"],\
+                    vectorController::get()->cells[i].integer["valid space radius"],vectorController::get()->cells[i].color["valid space color"]));
+
+
 }
 
             window.Draw(sf::Shape::Rectangle(vectorController::get()->cells[i].integer["x"],vectorController::get()->cells[i].integer["y"],vectorController::get()->cells[i].integer["x2"],vectorController::get()->cells[i].integer["y2"],vectorController::get()->cells[i].color["cell bkg"],2,vectorController::get()->cells[i].color["cell border"]));
