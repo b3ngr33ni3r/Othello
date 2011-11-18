@@ -34,7 +34,8 @@ void framework::init_board()
         vectorController::get()->cells[i].color["chip color p2"]=sf::Color(0,0,0);
 
         vectorController::get()->cells[i].integer["chip radius addition"]=(CELLWIDTH/2);
-        vectorController::get()->cells[i].integer["chip radius"]=3;
+        vectorController::get()->cells[i].integer["chip radius"]=10;
+        vectorController::get()->cells[i].integer["valid space radius"]=3;
         vectorController::get()->cells[i].integer["belongs to"]=0;//1 for p1,2 for p2
         //and .integer[x,y,x2,y2] will be set when dimensions are set
     }

@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "render.h"
 #include "framework.h"
+#include "turns.h"
 #include "vectorController.h"
 
 using namespace std;
@@ -29,6 +30,7 @@ sf::RenderWindow window(sf::VideoMode(800, 600, 32), "Othello");
  sf::Event Event;
 const sf::Input& InputStream = window.GetInput();
 
+turns::get()->turn=1;
 framework frame(window);
 frame.init_board();
 frame.write_dimensions();
@@ -62,6 +64,13 @@ while(window.IsOpened()){
                         int current_cell=frame.returnCell(InputStream.GetMouseX(),InputStream.GetMouseY());
                         cout<<"clicked "<<current_cell<<"\n";
                         vectorController::get()->cells[current_cell].boolean["visible"]=true;
+                        if (turns::get()->turn==2){
+                            turns::get()->turn=1;
+                            vectorController::get()->cells[current_cell].integer["belongs to"]=1;
+                        }else{
+                            turns::get()->turn=2;
+                            vectorController::get()->cells[current_cell].integer["belongs to"]=2;
+                        }
                     }
             }
 

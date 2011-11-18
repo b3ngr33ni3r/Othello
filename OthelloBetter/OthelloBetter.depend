@@ -208,11 +208,12 @@
 	<sstream>
 	<iostream>
 
-1321579860 source:c:\users\b3n\documents\codeblocks projects\othellobetter\main.cpp
+1321583223 source:c:\users\b3n\documents\codeblocks projects\othellobetter\main.cpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	"render.h"
 	"framework.h"
+	"turns.h"
 	"vectorController.h"
 
 1319320220 c:\users\b3n\documents\codeblocks projects\othellobetter\render.h
@@ -238,7 +239,7 @@
 	<string>
 	<iostream>
 
-1321579821 source:c:\users\b3n\documents\codeblocks projects\othellobetter\framework.cpp
+1321583392 source:c:\users\b3n\documents\codeblocks projects\othellobetter\framework.cpp
 	"framework.h"
 	"vectorController.h"
 	<SFML/Graphics.hpp>
@@ -258,4 +259,10 @@
 	<map>
 	<string>
 	<SFML/Graphics.hpp>
+
+1321582814 c:\users\b3n\documents\codeblocks projects\othellobetter\turns.h
+
+1321583161 source:c:\users\b3n\documents\codeblocks projects\othellobetter\turns.cpp
+	"turns.h"
+	<iostream>
 
