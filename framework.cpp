@@ -1,7 +1,6 @@
 #include "framework.h"
 #include "vectorController.h"
 #include <SFML/Graphics.hpp>
-#include <iostream>
 
 #define vectorController vectorController::get()
 //#define window windowController::get()
@@ -28,12 +27,14 @@ void framework::init_board()
         vectorController->newNode();
         vectorController->cells[i].boolean["visible"]=false;
 
-        vectorController->cells[i].color["cellbkg"]=sf::Color(37,158,6);
-        vectorController->cells[i].color["cellborder"]=sf::Color(68,107,5);
-        vectorController->cells[i].color["chipcolorp1"]=sf::Color(255,255,255);
-        vectorController->cells[i].color["chipcolorp2"]=sf::Color(0,0,0);
+        vectorController->cells[i].color["cell bkg"]=sf::Color(37,158,6);
+        vectorController->cells[i].color["cell border"]=sf::Color(68,107,5);
+        vectorController->cells[i].color["chip color p1"]=sf::Color(255,255,255);
+        vectorController->cells[i].color["chip color p2"]=sf::Color(0,0,0);
 
-        vectorController->cells[i].integer["belongsto"]=0;//1 for p1,2 for p2
+        vectorController->cells[i].integer["chip radius addition"]=(CELLWIDTH/2);
+        vectorController->cells[i].integer["chip radius"]=3;
+        vectorController->cells[i].integer["belongs to"]=0;//1 for p1,2 for p2
         //and .integer[x,y,x2,y2] will be set when dimensions are set
     }
     write_dimensions();
@@ -41,18 +42,19 @@ void framework::init_board()
 
 void framework::write_dimensions()
 {
+int counter=0;
 
-for (int a=0;a<NUMBERCELLS;a++){
-    std::cout<<((a%CELLSPERROW)+1)<<std::endl;
-    /*
-    vectorController->cells[a].integer["x"]=(((a%CELLSPERROW)*CELLWIDTH)+board_topleft_x);
-    vectorController->cells[a].integer["x2"]=((((a%CELLSPERROW)*CELLWIDTH)+board_topleft_x)+CELLWIDTH);
+    for (int i=0;i<CELLSPERROW;i++){
+        for (int j=0;j<CELLSPERROW;j++){
 
-    vectorController->cells[a].integer["y"]=(((a%CELLSPERROW)*CELLWIDTH)+board_topleft_y);
-    vectorController->cells[a].integer["y2"]=((((a%CELLSPERROW)*CELLWIDTH)+board_topleft_y)+CELLWIDTH);
-    */
+            if (counter<64){
+                vectorController->cells[counter].integer["x"]=((i*CELLWIDTH)+board_topleft_x);
+                vectorController->cells[counter].integer["x2"]=(((i*CELLWIDTH)+board_topleft_x)+CELLWIDTH);
 
-}
-
-
+                vectorController->cells[counter].integer["y"]=((j*CELLWIDTH)+board_topleft_y);
+                vectorController->cells[counter].integer["y2"]=(((j*CELLWIDTH)+board_topleft_y)+CELLWIDTH);
+            counter++;
+            }
+        }}
+return;
 }
