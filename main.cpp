@@ -8,17 +8,6 @@
 
 using namespace std;
 
-namespace movement{
-    enum{
-    moveUp=-1,
-    moveDown=1,
-    moveLeft=-8,
-    moveRight=8,
-    diagUL=-9,
-    diagDL=-7,
-    diagUR=7,
-    diagDR=9
-    };}
 
 
 int main()

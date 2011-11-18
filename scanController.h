@@ -8,7 +8,8 @@ class scanController
         scanController();
         static scanController* get();
 
-        bool direction_isvalid(int cell,int direction);
+        bool direction_isvalid(int cell,int direction,bool internal=false);
+        bool cell_isoccupied(int cell);
     protected:
     private:
     static scanController* scan_pointer;
