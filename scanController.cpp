@@ -120,3 +120,11 @@ void scanController::reset_last_valid_space_index()
     last_valid_cell=-1;
     return;
 }
+
+
+
+
+
+
+
+

@@ -208,7 +208,7 @@
 	<sstream>
 	<iostream>
 
-1321677325 source:c:\users\b3n\documents\codeblocks projects\othellobetter\main.cpp
+1321725046 source:c:\users\b3n\documents\codeblocks projects\othellobetter\main.cpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	"render.h"
@@ -268,7 +268,7 @@
 	"turns.h"
 	<iostream>
 
-1321676973 c:\users\b3n\documents\codeblocks projects\othellobetter\scancontroller.h
+1321726165 c:\users\b3n\documents\codeblocks projects\othellobetter\scancontroller.h
 
 1321723909 source:c:\users\b3n\documents\codeblocks projects\othellobetter\scancontroller.cpp
 	"scanController.h"
