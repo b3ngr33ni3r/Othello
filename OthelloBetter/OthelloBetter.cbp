@@ -50,6 +50,8 @@
 		<Unit filename="..\logic.cpp" />
 		<Unit filename="..\logic.h" />
 		<Unit filename="..\main.cpp" />
+		<Unit filename="..\pathController.cpp" />
+		<Unit filename="..\pathController.h" />
 		<Unit filename="..\render.cpp" />
 		<Unit filename="..\render.h" />
 		<Unit filename="..\scanController.cpp" />
