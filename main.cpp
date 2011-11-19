@@ -17,16 +17,16 @@ int main()
 bool callback_keypress_q=false;
 
 sf::Event Event;
-const sf::Input& InputStream = windowController::get()->window->GetInput();
+const sf::Input& InputStream = windowController::get()->window()->GetInput();
 
 turns::get()->turn=1;
-framework frame(windowController::get()->*window);
+framework frame(windowController::get()->window());
 frame.init_board();
 frame.write_dimensions();
 //cout<<vectorController::get()->cells.size();
 
-while(windowController::get()->window.IsOpened()){
-    windowController::get()->window.Clear();
+while(windowController::get()->window()->IsOpened()){
+    windowController::get()->window()->Clear();
 
     for (int i=0;i<vectorController::get()->cells.size();i++)
         {
@@ -34,14 +34,14 @@ while(windowController::get()->window.IsOpened()){
 
 
 
-            windowController::get()->window.Draw(sf::Shape::Rectangle(vectorController::get()->cells[i].integer["x"],vectorController::get()->cells[i].integer["y"],vectorController::get()->cells[i].integer["x2"],vectorController::get()->cells[i].integer["y2"],vectorController::get()->cells[i].color["cell bkg"],2,vectorController::get()->cells[i].color["cell border"]));
+            windowController::get()->window()->Draw(sf::Shape::Rectangle(vectorController::get()->cells[i].integer["x"],vectorController::get()->cells[i].integer["y"],vectorController::get()->cells[i].integer["x2"],vectorController::get()->cells[i].integer["y2"],vectorController::get()->cells[i].color["cell bkg"],2,vectorController::get()->cells[i].color["cell border"]));
             //cout<<"\n"<<vectorController::get()->cells[i].integer["x"]<<','<<vectorController::get()->cells[i].integer["y"]<<','<<vectorController::get()->cells[i].integer["x2"]<<','<<vectorController::get()->cells[i].integer["y2"];
             if (vectorController::get()->cells[i].boolean["visible"])
             {
                 if (vectorController::get()->cells[i].integer["belongs to"]==1)
-                windowController::get()->window.Draw(sf::Shape::Circle(vectorController::get()->cells[i].integer["x"]+vectorController::get()->cells[i].integer["chip radius addition"],vectorController::get()->cells[i].integer["y"]+vectorController::get()->cells[i].integer["chip radius addition"],vectorController::get()->cells[i].integer["chip radius"],vectorController::get()->cells[i].color["chip color p1"]));//x,y,radius,color
+                windowController::get()->window()->Draw(sf::Shape::Circle(vectorController::get()->cells[i].integer["x"]+vectorController::get()->cells[i].integer["chip radius addition"],vectorController::get()->cells[i].integer["y"]+vectorController::get()->cells[i].integer["chip radius addition"],vectorController::get()->cells[i].integer["chip radius"],vectorController::get()->cells[i].color["chip color p1"]));//x,y,radius,color
                 if (vectorController::get()->cells[i].integer["belongs to"]==2)
-                windowController::get()->window.Draw(sf::Shape::Circle(vectorController::get()->cells[i].integer["x"]+vectorController::get()->cells[i].integer["chip radius addition"],vectorController::get()->cells[i].integer["y"]+vectorController::get()->cells[i].integer["chip radius addition"],vectorController::get()->cells[i].integer["chip radius"],vectorController::get()->cells[i].color["chip color p2"]));//x,y,radius,color
+                windowController::get()->window()->Draw(sf::Shape::Circle(vectorController::get()->cells[i].integer["x"]+vectorController::get()->cells[i].integer["chip radius addition"],vectorController::get()->cells[i].integer["y"]+vectorController::get()->cells[i].integer["chip radius addition"],vectorController::get()->cells[i].integer["chip radius"],vectorController::get()->cells[i].color["chip color p2"]));//x,y,radius,color
             }
 
 
@@ -55,8 +55,9 @@ if (vectorController::get()->cells[i].boolean["valid space"]==true)
     //cout<<"space valid="<<i;
 
 cout<<vectorController::get()->cells[i].integer["valid space belongs to"];
+
     if ((!vectorController::get()->cells[i].boolean["visible"])&&(vectorController::get()->cells[i].integer["valid space belongs to"]!=turns::get()->turn))
-        windowController::get()->window.Draw(sf::Shape::Circle(vectorController::get()->cells[i].integer["x"]+vectorController::get()->cells[i].integer["chip radius addition"],\
+        windowController::get()->window()->Draw(sf::Shape::Circle(vectorController::get()->cells[i].integer["x"]+vectorController::get()->cells[i].integer["chip radius addition"],\
                     vectorController::get()->cells[i].integer["y"]+vectorController::get()->cells[i].integer["chip radius addition"],\
                     vectorController::get()->cells[i].integer["valid space radius"],vectorController::get()->cells[i].color["valid space color"]));
 
@@ -65,14 +66,14 @@ cout<<vectorController::get()->cells[i].integer["valid space belongs to"];
 
         }
 
-        while (windowController::get()->window.GetEvent(Event))
+        while (windowController::get()->window()->GetEvent(Event))
         {
          if ((Event.Type == sf::Event::KeyPressed)&&(Event.Key.Code == sf::Key::Q))
             callback_keypress_q=true;
          if ((Event.Type == sf::Event::KeyReleased)&&(Event.Key.Code == sf::Key::Q))
             callback_keypress_q=false;
          if ((Event.Type == sf::Event::Closed)||((Event.Type == sf::Event::KeyReleased)&&(Event.Key.Code == sf::Key::Escape)))
-            windowController::get()->window.Close();
+            windowController::get()->window()->Close();
 
  if (Event.Type==sf::Event::MouseButtonPressed)
             {
@@ -97,7 +98,7 @@ cout<<vectorController::get()->cells[i].integer["valid space belongs to"];
 
 
         }
-        windowController::get()->window.Display();
+        windowController::get()->window()->Display();
 
     }
 }

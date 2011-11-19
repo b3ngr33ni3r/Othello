@@ -7,7 +7,7 @@
 //#define window windowController::get()
 //do the above so it looks a little prettier
 
-framework::framework(sf::RenderWindow& window)
+framework::framework(sf::RenderWindow* window)
 {
     //ctor
 
@@ -15,8 +15,8 @@ framework::framework(sf::RenderWindow& window)
     CELLWIDTH=30;
     CELLSPERROW=8;
 
-    board_topleft_x=((window.GetWidth()/2)-((CELLWIDTH*CELLSPERROW)/2));
-    board_topleft_y=((window.GetHeight()/2)-((CELLWIDTH*CELLSPERROW)/2));
+    board_topleft_x=((window->GetWidth()/2)-((CELLWIDTH*CELLSPERROW)/2));
+    board_topleft_y=((window->GetHeight()/2)-((CELLWIDTH*CELLSPERROW)/2));
 
 }
 

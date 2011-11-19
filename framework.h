@@ -11,7 +11,7 @@
 class framework
 {
     public:
-        framework(sf::RenderWindow& window);
+        framework(sf::RenderWindow* window);
         void init_board();
         void write_dimensions();
         int returnCell(int x,int y);

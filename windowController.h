@@ -7,10 +7,11 @@ class windowController
     public:
         windowController();
         static windowController* get();
-        sf::RenderWindow* window;
+        static sf::RenderWindow* window();
     protected:
     private:
     static windowController* window_pointer;
+    static sf::RenderWindow* windowReal;
 };
 
 #endif // WINDOWCONTROLLER_H
