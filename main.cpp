@@ -23,7 +23,7 @@ turns::get()->turn=1;
 framework frame(windowController::get()->window());
 frame.init_board();
 frame.write_dimensions();
-//cout<<vectorController::get()->cells.size();
+
 
 while(windowController::get()->window()->IsOpened()){
     windowController::get()->window()->Clear();
@@ -35,7 +35,7 @@ while(windowController::get()->window()->IsOpened()){
 
 
             windowController::get()->window()->Draw(sf::Shape::Rectangle(vectorController::get()->cells[i].integer["x"],vectorController::get()->cells[i].integer["y"],vectorController::get()->cells[i].integer["x2"],vectorController::get()->cells[i].integer["y2"],vectorController::get()->cells[i].color["cell bkg"],2,vectorController::get()->cells[i].color["cell border"]));
-            //cout<<"\n"<<vectorController::get()->cells[i].integer["x"]<<','<<vectorController::get()->cells[i].integer["y"]<<','<<vectorController::get()->cells[i].integer["x2"]<<','<<vectorController::get()->cells[i].integer["y2"];
+
             if (vectorController::get()->cells[i].boolean["visible"])
             {
                 if (vectorController::get()->cells[i].integer["belongs to"]==1)
@@ -52,9 +52,6 @@ if (vectorController::get()->cells[i].boolean["valid space"]==true)
 {
 
 
-    //cout<<"space valid="<<i;
-
-cout<<vectorController::get()->cells[i].integer["valid space belongs to"];
 
     if ((!vectorController::get()->cells[i].boolean["visible"])&&(vectorController::get()->cells[i].integer["valid space belongs to"]!=turns::get()->turn))
         windowController::get()->window()->Draw(sf::Shape::Circle(vectorController::get()->cells[i].integer["x"]+vectorController::get()->cells[i].integer["chip radius addition"],\
@@ -81,18 +78,18 @@ cout<<vectorController::get()->cells[i].integer["valid space belongs to"];
                     {
                         int current_cell=frame.returnCell(InputStream.GetMouseX(),InputStream.GetMouseY());
 
-                    if ((!vectorController::get()->cells[current_cell].boolean["visible"])&&(vectorController::get()->cells[current_cell].boolean["valid space"])){
-                        cout<<"clicked "<<current_cell<<"\n";
-                        vectorController::get()->cells[current_cell].boolean["visible"]=true;
+                        if ((!vectorController::get()->cells[current_cell].boolean["visible"])&&(vectorController::get()->cells[current_cell].boolean["valid space"])){
+                            cout<<"clicked "<<current_cell<<"\n";
+                            vectorController::get()->cells[current_cell].boolean["visible"]=true;
 
-                        if (turns::get()->turn==2){
-                            turns::get()->turn=1;
-                            vectorController::get()->cells[current_cell].integer["belongs to"]=1;
-                        }else{
-                            turns::get()->turn=2;
-                            vectorController::get()->cells[current_cell].integer["belongs to"]=2;
-                        }
-                    }else{cout<<"invalid click\n";}
+                            if (turns::get()->turn==2){
+                                turns::get()->turn=1;
+                                vectorController::get()->cells[current_cell].integer["belongs to"]=1;
+                            }else{
+                                turns::get()->turn=2;
+                                vectorController::get()->cells[current_cell].integer["belongs to"]=2;
+                            }
+                        }else{cout<<"invalid click\n";}
                     }
             }
 

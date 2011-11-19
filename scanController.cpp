@@ -61,54 +61,50 @@ if ((cell>=0)&&(cell<64)){
 
 void scanController::checks(int i)
 {
-    int v_cell=-1;
 
+if (vectorController::get()->cells[i].boolean["visible"]){
+//check left
+    if (scanController::get()->direction_isvalid(i,movement::moveLeft)){
+        vectorController::get()->cells[i+movement::moveLeft].boolean["valid space"]=true;
+        if (vectorController::get()->cells[i].integer["belongs to"]==1)
+        vectorController::get()->cells[i+movement::moveLeft].integer["valid space belongs to"]=2;
+        if (vectorController::get()->cells[i].integer["belongs to"]==2)
+        vectorController::get()->cells[i+movement::moveLeft].integer["valid space belongs to"]=1;
+
+    }
+
+//check right
+    if (scanController::get()->direction_isvalid(i,movement::moveRight)){
+        vectorController::get()->cells[i+movement::moveRight].boolean["valid space"]=true;
+        if (vectorController::get()->cells[i].integer["belongs to"]==1)
+        vectorController::get()->cells[i+movement::moveRight].integer["valid space belongs to"]=2;
+        if (vectorController::get()->cells[i].integer["belongs to"]==2)
+        vectorController::get()->cells[i+movement::moveRight].integer["valid space belongs to"]=1;
+
+    }
+
+//check up
     if (scanController::get()->direction_isvalid(i,movement::moveUp)){
-                v_cell=scanController::get()->get_last_valid_space_index();
-            if (v_cell!=-1){
-                vectorController::get()->cells[i].boolean["valid space"]=true;
-                if (turns::get()->turn==2)
-                vectorController::get()->cells[i].integer["valid space belongs to"]=1;
-                if (turns::get()->turn==1)
-                vectorController::get()->cells[i].integer["valid space belongs to"]=2;
-            }
+        vectorController::get()->cells[i+movement::moveUp].boolean["valid space"]=true;
+        if (vectorController::get()->cells[i].integer["belongs to"]==1)
+        vectorController::get()->cells[i+movement::moveUp].integer["valid space belongs to"]=2;
+        if (vectorController::get()->cells[i].integer["belongs to"]==2)
+        vectorController::get()->cells[i+movement::moveUp].integer["valid space belongs to"]=1;
 
-            }
-            if (scanController::get()->direction_isvalid(i,movement::moveDown)){
-                v_cell=scanController::get()->get_last_valid_space_index();
-            if (v_cell!=-1){
-                vectorController::get()->cells[i].boolean["valid space"]=true;
-                if (turns::get()->turn==2)
-                vectorController::get()->cells[i].integer["valid space belongs to"]=1;
-                if (turns::get()->turn==1)
-                vectorController::get()->cells[i].integer["valid space belongs to"]=2;
-            }
+    }
 
-            }
-            if (scanController::get()->direction_isvalid(i,movement::moveLeft)){
-                v_cell=scanController::get()->get_last_valid_space_index();
-            if (v_cell!=-1){
-                vectorController::get()->cells[i].boolean["valid space"]=true;
-                if (turns::get()->turn==2)
-                vectorController::get()->cells[i].integer["valid space belongs to"]=1;
-                if (turns::get()->turn==1)
-                vectorController::get()->cells[i].integer["valid space belongs to"]=2;
-            }
+//check down
+    if (scanController::get()->direction_isvalid(i,movement::moveDown)){
+        vectorController::get()->cells[i+movement::moveDown].boolean["valid space"]=true;
+        if (vectorController::get()->cells[i].integer["belongs to"]==1)
+        vectorController::get()->cells[i+movement::moveDown].integer["valid space belongs to"]=2;
+        if (vectorController::get()->cells[i].integer["belongs to"]==2)
+        vectorController::get()->cells[i+movement::moveDown].integer["valid space belongs to"]=1;
 
-            }
-            if (scanController::get()->direction_isvalid(i,movement::moveRight)){
-                v_cell=scanController::get()->get_last_valid_space_index();
-            if (v_cell!=-1){
-                vectorController::get()->cells[i].boolean["valid space"]=true;
-                if (turns::get()->turn==2)
-                vectorController::get()->cells[i].integer["valid space belongs to"]=1;
-                if (turns::get()->turn==1)
-                vectorController::get()->cells[i].integer["valid space belongs to"]=2;
-            }
+    }
 
-            }
-
-
+}
+return;
 }
 
 
