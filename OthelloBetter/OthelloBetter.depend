@@ -208,10 +208,11 @@
 	<sstream>
 	<iostream>
 
-1321669599 source:c:\users\b3n\documents\codeblocks projects\othellobetter\main.cpp
+1321674754 source:c:\users\b3n\documents\codeblocks projects\othellobetter\main.cpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	"render.h"
+	"windowController.h"
 	"framework.h"
 	"turns.h"
 	"vectorController.h"
@@ -240,7 +241,7 @@
 	<string>
 	<iostream>
 
-1321669999 source:c:\users\b3n\documents\codeblocks projects\othellobetter\framework.cpp
+1321670411 source:c:\users\b3n\documents\codeblocks projects\othellobetter\framework.cpp
 	"framework.h"
 	"vectorController.h"
 	<SFML/Graphics.hpp>
@@ -267,11 +268,18 @@
 	"turns.h"
 	<iostream>
 
-1321590883 c:\users\b3n\documents\codeblocks projects\othellobetter\scancontroller.h
+1321674376 c:\users\b3n\documents\codeblocks projects\othellobetter\scancontroller.h
 
-1321647500 source:c:\users\b3n\documents\codeblocks projects\othellobetter\scancontroller.cpp
+1321674376 source:c:\users\b3n\documents\codeblocks projects\othellobetter\scancontroller.cpp
 	"scanController.h"
 	<iostream>
 	"vectorController.h"
 	"turns.h"
+
+1321674610 source:c:\users\b3n\documents\codeblocks projects\othellobetter\windowcontroller.cpp
+	"windowController.h"
+	<iostream>
+
+1321675098 c:\users\b3n\documents\codeblocks projects\othellobetter\windowcontroller.h
+	<SFML/Graphics.hpp>
 

@@ -49,3 +49,38 @@ if ((cell>=0)&&(cell<64)){
     return false;
 
 }
+
+void scanController::checks(int i)
+{
+
+    if (scanController::get()->direction_isvalid(i,movement::moveUp)){
+                vectorController::get()->cells[i+movement::moveUp].boolean["valid space"]=true;
+                if (turns::get()->turn==2)
+                vectorController::get()->cells[i+movement::moveUp].integer["valid space belongs to"]=1;
+                if (turns::get()->turn==1)
+                vectorController::get()->cells[i+movement::moveUp].integer["valid space belongs to"]=2;
+            }
+            if (scanController::get()->direction_isvalid(i,movement::moveDown)){
+                vectorController::get()->cells[i+movement::moveDown].boolean["valid space"]=true;
+                if (turns::get()->turn==2)
+                vectorController::get()->cells[i+movement::moveDown].integer["valid space belongs to"]=1;
+                if (turns::get()->turn==1)
+                vectorController::get()->cells[i+movement::moveDown].integer["valid space belongs to"]=2;
+            }
+            if (scanController::get()->direction_isvalid(i,movement::moveLeft)){
+                vectorController::get()->cells[i+movement::moveLeft].boolean["valid space"]=true;
+                if (turns::get()->turn==2)
+                vectorController::get()->cells[i+movement::moveLeft].integer["valid space belongs to"]=1;
+                if (turns::get()->turn==1)
+                vectorController::get()->cells[i+movement::moveLeft].integer["valid space belongs to"]=2;
+            }
+            if (scanController::get()->direction_isvalid(i,movement::moveRight)){
+                vectorController::get()->cells[i+movement::moveRight].boolean["valid space"]=true;
+                if (turns::get()->turn==2)
+                vectorController::get()->cells[i+movement::moveRight].integer["valid space belongs to"]=1;
+                if (turns::get()->turn==1)
+                vectorController::get()->cells[i+movement::moveRight].integer["valid space belongs to"]=2;
+            }
+
+
+}
