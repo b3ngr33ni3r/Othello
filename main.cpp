@@ -25,6 +25,8 @@ frame.write_dimensions();
 cout<<vectorController::get()->cells.size();
 
 while(window.IsOpened()){
+    window.Clear();
+
     for (int i=0;i<vectorController::get()->cells.size();i++)
         {
             if (scanController::get()->direction_isvalid(i,movement::moveUp))
@@ -35,6 +37,22 @@ while(window.IsOpened()){
                 vectorController::get()->cells[i+movement::moveLeft].boolean["valid space"]=true;
             if (scanController::get()->direction_isvalid(i,movement::moveRight))
                 vectorController::get()->cells[i+movement::moveRight].boolean["valid space"]=true;
+
+
+
+
+            window.Draw(sf::Shape::Rectangle(vectorController::get()->cells[i].integer["x"],vectorController::get()->cells[i].integer["y"],vectorController::get()->cells[i].integer["x2"],vectorController::get()->cells[i].integer["y2"],vectorController::get()->cells[i].color["cell bkg"],2,vectorController::get()->cells[i].color["cell border"]));
+            //cout<<"\n"<<vectorController::get()->cells[i].integer["x"]<<','<<vectorController::get()->cells[i].integer["y"]<<','<<vectorController::get()->cells[i].integer["x2"]<<','<<vectorController::get()->cells[i].integer["y2"];
+            if (vectorController::get()->cells[i].boolean["visible"])
+            {
+                if (vectorController::get()->cells[i].integer["belongs to"]==1)
+                window.Draw(sf::Shape::Circle(vectorController::get()->cells[i].integer["x"]+vectorController::get()->cells[i].integer["chip radius addition"],vectorController::get()->cells[i].integer["y"]+vectorController::get()->cells[i].integer["chip radius addition"],vectorController::get()->cells[i].integer["chip radius"],vectorController::get()->cells[i].color["chip color p1"]));//x,y,radius,color
+                if (vectorController::get()->cells[i].integer["belongs to"]==2)
+                window.Draw(sf::Shape::Circle(vectorController::get()->cells[i].integer["x"]+vectorController::get()->cells[i].integer["chip radius addition"],vectorController::get()->cells[i].integer["y"]+vectorController::get()->cells[i].integer["chip radius addition"],vectorController::get()->cells[i].integer["chip radius"],vectorController::get()->cells[i].color["chip color p2"]));//x,y,radius,color
+            }
+
+
+
 
 
 if (vectorController::get()->cells[i].boolean["valid space"]==true)
@@ -52,18 +70,7 @@ if (vectorController::get()->cells[i].boolean["valid space"]==true)
 
 }
 
-            window.Draw(sf::Shape::Rectangle(vectorController::get()->cells[i].integer["x"],vectorController::get()->cells[i].integer["y"],vectorController::get()->cells[i].integer["x2"],vectorController::get()->cells[i].integer["y2"],vectorController::get()->cells[i].color["cell bkg"],2,vectorController::get()->cells[i].color["cell border"]));
-            //cout<<"\n"<<vectorController::get()->cells[i].integer["x"]<<','<<vectorController::get()->cells[i].integer["y"]<<','<<vectorController::get()->cells[i].integer["x2"]<<','<<vectorController::get()->cells[i].integer["y2"];
-            if (vectorController::get()->cells[i].boolean["visible"])
-            {
-                if (vectorController::get()->cells[i].integer["belongs to"]==1)
-                window.Draw(sf::Shape::Circle(vectorController::get()->cells[i].integer["x"]+vectorController::get()->cells[i].integer["chip radius addition"],vectorController::get()->cells[i].integer["y"]+vectorController::get()->cells[i].integer["chip radius addition"],vectorController::get()->cells[i].integer["chip radius"],vectorController::get()->cells[i].color["chip color p1"]));//x,y,radius,color
-                if (vectorController::get()->cells[i].integer["belongs to"]==2)
-                window.Draw(sf::Shape::Circle(vectorController::get()->cells[i].integer["x"]+vectorController::get()->cells[i].integer["chip radius addition"],vectorController::get()->cells[i].integer["y"]+vectorController::get()->cells[i].integer["chip radius addition"],vectorController::get()->cells[i].integer["chip radius"],vectorController::get()->cells[i].color["chip color p2"]));//x,y,radius,color
-            }
         }
-
-
 
         while (window.GetEvent(Event))
         {
@@ -83,6 +90,7 @@ if (vectorController::get()->cells[i].boolean["valid space"]==true)
                     if (!vectorController::get()->cells[current_cell].boolean["visible"]){
                         cout<<"clicked "<<current_cell<<"\n";
                         vectorController::get()->cells[current_cell].boolean["visible"]=true;
+
                         if (turns::get()->turn==2){
                             turns::get()->turn=1;
                             vectorController::get()->cells[current_cell].integer["belongs to"]=1;
