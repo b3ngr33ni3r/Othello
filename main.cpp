@@ -22,22 +22,29 @@ turns::get()->turn=1;
 framework frame(window);
 frame.init_board();
 frame.write_dimensions();
-cout<<vectorController::get()->cells.size();
+//cout<<vectorController::get()->cells.size();
 
 while(window.IsOpened()){
     window.Clear();
 
     for (int i=0;i<vectorController::get()->cells.size();i++)
         {
-            if (scanController::get()->direction_isvalid(i,movement::moveUp))
+            if (scanController::get()->direction_isvalid(i,movement::moveUp)){
                 vectorController::get()->cells[i+movement::moveUp].boolean["valid space"]=true;
-            if (scanController::get()->direction_isvalid(i,movement::moveDown))
+                vectorController::get()->cells[i+movement::moveUp].integer["valid space belongs to"]=1;
+            }
+            if (scanController::get()->direction_isvalid(i,movement::moveDown)){
                 vectorController::get()->cells[i+movement::moveDown].boolean["valid space"]=true;
-            if (scanController::get()->direction_isvalid(i,movement::moveLeft))
+                vectorController::get()->cells[i+movement::moveUp].integer["valid space belongs to"]=1;
+            }
+            if (scanController::get()->direction_isvalid(i,movement::moveLeft)){
                 vectorController::get()->cells[i+movement::moveLeft].boolean["valid space"]=true;
-            if (scanController::get()->direction_isvalid(i,movement::moveRight))
+                vectorController::get()->cells[i+movement::moveUp].integer["valid space belongs to"]=1;
+            }
+            if (scanController::get()->direction_isvalid(i,movement::moveRight)){
                 vectorController::get()->cells[i+movement::moveRight].boolean["valid space"]=true;
-
+                vectorController::get()->cells[i+movement::moveUp].integer["valid space belongs to"]=1;
+            }
 
 
 
@@ -62,7 +69,7 @@ if (vectorController::get()->cells[i].boolean["valid space"]==true)
     //cout<<"space valid="<<i;
 
 
-    if (!vectorController::get()->cells[i].boolean["visible"])
+    if ((!vectorController::get()->cells[i].boolean["visible"])&&(vectorController::get()->cells[i].integer["belongs to"]!=turns::get()->turn))
         window.Draw(sf::Shape::Circle(vectorController::get()->cells[i].integer["x"]+vectorController::get()->cells[i].integer["chip radius addition"],\
                     vectorController::get()->cells[i].integer["y"]+vectorController::get()->cells[i].integer["chip radius addition"],\
                     vectorController::get()->cells[i].integer["valid space radius"],vectorController::get()->cells[i].color["valid space color"]));
@@ -87,7 +94,7 @@ if (vectorController::get()->cells[i].boolean["valid space"]==true)
                     {
                         int current_cell=frame.returnCell(InputStream.GetMouseX(),InputStream.GetMouseY());
 
-                    if (!vectorController::get()->cells[current_cell].boolean["visible"]){
+                    if ((!vectorController::get()->cells[current_cell].boolean["visible"])&&(vectorController::get()->cells[current_cell].boolean["valid space"])){
                         cout<<"clicked "<<current_cell<<"\n";
                         vectorController::get()->cells[current_cell].boolean["visible"]=true;
 

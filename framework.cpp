@@ -39,8 +39,10 @@ void framework::init_board()
         vectorController::get()->cells[i].integer["chip radius"]=10;
         vectorController::get()->cells[i].integer["valid space radius"]=3;
         vectorController::get()->cells[i].integer["belongs to"]=0;//1 for p1,2 for p2
+        vectorController::get()->cells[i].integer["valid space belongs to"]=0;
         //and .integer[x,y,x2,y2] will be set when dimensions are set
     }
+    write_initial_four();
     write_dimensions();
 }
 
@@ -77,4 +79,22 @@ int framework::returnCell(int x,int y)
       count++;
   }
   return -1;
+}
+
+
+void framework::write_initial_four()
+{
+    vectorController::get()->cells[27].boolean["visible"]=true;
+    vectorController::get()->cells[27].integer["belongs to"]=1;
+
+    vectorController::get()->cells[28].boolean["visible"]=true;
+    vectorController::get()->cells[28].integer["belongs to"]=2;
+
+    vectorController::get()->cells[35].boolean["visible"]=true;
+    vectorController::get()->cells[35].integer["belongs to"]=2;
+
+    vectorController::get()->cells[36].boolean["visible"]=true;
+    vectorController::get()->cells[36].integer["belongs to"]=1;
+
+    return;
 }

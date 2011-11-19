@@ -15,6 +15,7 @@ class framework
         void init_board();
         void write_dimensions();
         int returnCell(int x,int y);
+        void write_initial_four();
     protected:
     private:
         int NUMBERCELLS,CELLWIDTH,CELLSPERROW,board_topleft_x,board_topleft_y;
