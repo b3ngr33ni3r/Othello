@@ -208,7 +208,7 @@
 	<sstream>
 	<iostream>
 
-1321725046 source:c:\users\b3n\documents\codeblocks projects\othellobetter\main.cpp
+1321735936 source:c:\users\b3n\documents\codeblocks projects\othellobetter\main.cpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	"render.h"
@@ -217,6 +217,7 @@
 	"turns.h"
 	"vectorController.h"
 	"scanController.h"
+	"pathController.h"
 
 1319320220 c:\users\b3n\documents\codeblocks projects\othellobetter\render.h
 
@@ -270,7 +271,7 @@
 
 1321726165 c:\users\b3n\documents\codeblocks projects\othellobetter\scancontroller.h
 
-1321726064 source:c:\users\b3n\documents\codeblocks projects\othellobetter\scancontroller.cpp
+1321735286 source:c:\users\b3n\documents\codeblocks projects\othellobetter\scancontroller.cpp
 	"scanController.h"
 	<iostream>
 	"vectorController.h"
@@ -282,4 +283,13 @@
 
 1321675652 c:\users\b3n\documents\codeblocks projects\othellobetter\windowcontroller.h
 	<SFML/Graphics.hpp>
+
+1321729124 source:c:\users\b3n\documents\codeblocks projects\othellobetter\pathcontroller.cpp
+	"pathController.h"
+	"scanController.h"
+	"vectorController.h"
+	"turns.h"
+	<iostream>
+
+1321728545 c:\users\b3n\documents\codeblocks projects\othellobetter\pathcontroller.h
 

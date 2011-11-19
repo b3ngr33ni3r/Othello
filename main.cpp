@@ -6,6 +6,7 @@
 #include "turns.h"
 #include "vectorController.h"
 #include "scanController.h"
+#include "pathController.h"
 
 using namespace std;
 
@@ -31,7 +32,7 @@ while(windowController::get()->window()->IsOpened()){
     for (int i=0;i<vectorController::get()->cells.size();i++)
         {
             scanController::get()->checks(i);
-
+            pathController::get()->pathHandler();
 
 
             windowController::get()->window()->Draw(sf::Shape::Rectangle(vectorController::get()->cells[i].integer["x"],vectorController::get()->cells[i].integer["y"],vectorController::get()->cells[i].integer["x2"],vectorController::get()->cells[i].integer["y2"],vectorController::get()->cells[i].color["cell bkg"],2,vectorController::get()->cells[i].color["cell border"]));
@@ -79,7 +80,7 @@ if (vectorController::get()->cells[i].boolean["valid space"]==true)
                         int current_cell=frame.returnCell(InputStream.GetMouseX(),InputStream.GetMouseY());
 
                         if ((!vectorController::get()->cells[current_cell].boolean["visible"])&&(vectorController::get()->cells[current_cell].boolean["valid space"])){
-                            cout<<"clicked "<<current_cell<<"\n";
+                            cout<<"clicked "<<current_cell<<"\trow "<<(current_cell%8)<<"\n";
                             vectorController::get()->cells[current_cell].boolean["visible"]=true;
 
                             if (turns::get()->turn==2){
