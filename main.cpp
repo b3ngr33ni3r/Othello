@@ -59,10 +59,10 @@ if (vectorController::get()->cells[i].boolean["valid space"]==true)
 {
 
 
-    cout<<"space valid="<<i;
+    //cout<<"space valid="<<i;
 
 
-    //if ((vectorController::get()->cells[i].integer["belongs to"]!=turns::get()->turn)&&(vectorController::get()->cells[i].integer["belongs to"]!=0))
+    if (!vectorController::get()->cells[i].boolean["visible"])
         window.Draw(sf::Shape::Circle(vectorController::get()->cells[i].integer["x"]+vectorController::get()->cells[i].integer["chip radius addition"],\
                     vectorController::get()->cells[i].integer["y"]+vectorController::get()->cells[i].integer["chip radius addition"],\
                     vectorController::get()->cells[i].integer["valid space radius"],vectorController::get()->cells[i].color["valid space color"]));
