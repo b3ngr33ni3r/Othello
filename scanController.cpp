@@ -24,7 +24,7 @@ bool scanController::direction_isvalid(int cell,int direction,bool internal)
 {
 
 
-    if ((cell+direction>63) || (cell+direction<0) || ((cell%8)==7))
+    if ((cell+direction>63) || (cell+direction<0) || (((cell%8)==7)&&(direction==movement::moveDown)) || (((cell%8)==0)&&(direction==movement::moveUp)))
     return false;
 
     if(vectorController::get()->cells[cell+direction].integer["belongs to"]==0){
