@@ -8,6 +8,7 @@ class windowController
         windowController();
         static windowController* get();
         static sf::RenderWindow* window();
+        bool draw;
     protected:
     private:
     static windowController* window_pointer;

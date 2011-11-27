@@ -2,7 +2,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "windowController.h"
-
+#include "framework.h"
 #include "turns.h"
 #include "vectorController.h"
 #include "scanController.h"
