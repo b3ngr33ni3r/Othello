@@ -50,8 +50,18 @@
 		<Unit filename="..\logic.cpp" />
 		<Unit filename="..\logic.h" />
 		<Unit filename="..\main.cpp" />
+		<Unit filename="..\pathController.cpp" />
+		<Unit filename="..\pathController.h" />
 		<Unit filename="..\render.cpp" />
 		<Unit filename="..\render.h" />
+		<Unit filename="..\scanController.cpp" />
+		<Unit filename="..\scanController.h" />
+		<Unit filename="..\turns.cpp" />
+		<Unit filename="..\turns.h" />
+		<Unit filename="..\vectorController.cpp" />
+		<Unit filename="..\vectorController.h" />
+		<Unit filename="..\windowController.cpp" />
+		<Unit filename="..\windowController.h" />
 		<Unit filename="..\write.cpp" />
 		<Unit filename="..\write.h" />
 		<Extensions>

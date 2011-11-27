@@ -1,8 +1,8 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include "render.h"
+
 #include "windowController.h"
-#include "framework.h"
+
 #include "turns.h"
 #include "vectorController.h"
 #include "scanController.h"
@@ -15,7 +15,7 @@ using namespace std;
 int main()
 {
 
-bool callback_keypress_q=false;
+
 
 sf::Event Event;
 const sf::Input& InputStream = windowController::get()->window()->GetInput();
@@ -66,10 +66,6 @@ if (vectorController::get()->cells[i].boolean["valid space"]==true)
 
         while (windowController::get()->window()->GetEvent(Event))
         {
-         if ((Event.Type == sf::Event::KeyPressed)&&(Event.Key.Code == sf::Key::Q))
-            callback_keypress_q=true;
-         if ((Event.Type == sf::Event::KeyReleased)&&(Event.Key.Code == sf::Key::Q))
-            callback_keypress_q=false;
          if ((Event.Type == sf::Event::Closed)||((Event.Type == sf::Event::KeyReleased)&&(Event.Key.Code == sf::Key::Escape)))
             windowController::get()->window()->Close();
 

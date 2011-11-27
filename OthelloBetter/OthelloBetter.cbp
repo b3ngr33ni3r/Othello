@@ -33,37 +33,15 @@
 		</Compiler>
 		<Unit filename="..\ai.cpp" />
 		<Unit filename="..\ai.h" />
-		<Unit filename="..\board.cpp" />
-		<Unit filename="..\board.h" />
-		<Unit filename="..\chips.cpp" />
-		<Unit filename="..\chips.h" />
-		<Unit filename="..\click.cpp" />
-		<Unit filename="..\click.h" />
-		<Unit filename="..\draw.cpp" />
-		<Unit filename="..\draw.h" />
-		<Unit filename="..\events.cpp" />
-		<Unit filename="..\events.h" />
-		<Unit filename="..\framework.cpp" />
-		<Unit filename="..\framework.h" />
-		<Unit filename="..\logfile.cpp" />
-		<Unit filename="..\logfile.h" />
-		<Unit filename="..\logic.cpp" />
-		<Unit filename="..\logic.h" />
 		<Unit filename="..\main.cpp" />
 		<Unit filename="..\pathController.cpp" />
 		<Unit filename="..\pathController.h" />
-		<Unit filename="..\render.cpp" />
-		<Unit filename="..\render.h" />
 		<Unit filename="..\scanController.cpp" />
 		<Unit filename="..\scanController.h" />
-		<Unit filename="..\turns.cpp" />
-		<Unit filename="..\turns.h" />
 		<Unit filename="..\vectorController.cpp" />
 		<Unit filename="..\vectorController.h" />
 		<Unit filename="..\windowController.cpp" />
 		<Unit filename="..\windowController.h" />
-		<Unit filename="..\write.cpp" />
-		<Unit filename="..\write.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />
