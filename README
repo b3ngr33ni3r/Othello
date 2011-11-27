@@ -14,9 +14,10 @@ Thats all... for now.
 -----
 Changelog
 
-right now, im fixing a drawing issue with ->isavail cells so that all available
-cells will be drawn, rather then lagging one behind
+theres an issue with the cell availability algorithm, sometimes it gets 
+screwed up and directions stop working.
 
+the flipping algorithm isn't causing anything to happen..at all.
 
 ------
 TO RUN my progress so far, checkout 
