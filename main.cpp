@@ -6,6 +6,7 @@
 #include "vectorController.h"
 #include "scanController.h"
 #include "pathController.h"
+#include <sstream>
 using namespace std;
 
 void write(int message_type)
@@ -15,6 +16,18 @@ void write(int message_type)
     }else if (message_type==2){
     cout<<"\n====================\n= MOUSE: click  =\n====================\n";
     }
+}
+
+void labelcell(int i){
+stringstream ss;
+ss<<i;
+sf::String text;
+text.SetText(ss.str());
+text.SetSize(8);
+text.SetColor(sf::Color(140,240,240));
+text.SetPosition(vectorController::get()->cells[i].integer["x"],vectorController::get()->cells[i].integer["y"]);
+
+windowController::get()->window()->Draw(text);
 }
 
 int main()
@@ -57,14 +70,6 @@ while(windowController::get()->window()->IsOpened()){
                 }
 
 
-    if ((vectorController::get()->cells[i].boolean["valid space"]==true)||(vectorController::get()->cells[i].boolean["visible"]==true)){
-     //sf::String label;
-     //char * str;
-     //itoa(i,str,10);
-     //label.SetText(str);
-     //label.SetCenter(vectorController::get()->cells[i].integer["x"]+vectorController::get()->cells[i].integer["chip radius addition"],vectorController::get()->cells[i].integer["y"]+vectorController::get()->cells[i].integer["chip radius addition"]);
-     //windowController::get()->window()->Draw(label);
-    }
 
     if (vectorController::get()->cells[i].boolean["valid space"]==true)
     {
@@ -78,6 +83,12 @@ while(windowController::get()->window()->IsOpened()){
 
 
     }
+
+
+   if ((vectorController::get()->cells[i].boolean["valid space"]==true)||(vectorController::get()->cells[i].boolean["visible"]==true)){
+     labelcell(i);
+    }
+
 
             }
 

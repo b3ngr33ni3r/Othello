@@ -48,17 +48,17 @@ void pathController::path(int i,int direction)
                             if (vectorController::get()->cells[i].integer["belongs to"]!=vectorController::get()->cells[i+direction].integer["belongs to"]){
                                     if (vectorController::get()->cells[i].integer["belongs to"]!=0){
                                         cout<<"path() found that cell "<<i<<" is the opposite color of cell "<<i+direction<<"\n";
-
+                                        cout<<"\tsetting cell "<<i+direction<<"'s belongs to value.\n";
                                         if (vectorController::get()->cells[i].integer["belongs to"]==1)
                                             vectorController::get()->cells[i+direction].integer["belongs to"]=2;
                                         else if (vectorController::get()->cells[i].integer["belongs to"]==2)
                                             vectorController::get()->cells[i+direction].integer["belongs to"]=1;
 
-
+                                        cout<<"\t.integer[\"belongs to\"] = "<<vectorController::get()->cells[i+direction].integer["belongs to"]<<"\n";
                                     }
                             }
-                    }
-            }
+                    }else{cout<<"path() found that direction "<<direction<<" terminated @ "<<i+direction<<". no cell found.\n";}
+            }else{cout<<"path() found that direction "<<direction<<" terminated @ "<<i+direction<<". cell not occupied.\n";}
         }
 
 
