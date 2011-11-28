@@ -35,6 +35,8 @@
 		<Unit filename="..\README" />
 		<Unit filename="..\ai.cpp" />
 		<Unit filename="..\ai.h" />
+		<Unit filename="..\cinController.cpp" />
+		<Unit filename="..\cinController.h" />
 		<Unit filename="..\framework.cpp" />
 		<Unit filename="..\framework.h" />
 		<Unit filename="..\main.cpp" />

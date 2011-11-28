@@ -53,7 +53,7 @@ void pathController::path(int i,int direction)
                                         cout<<"\ti.integer[\"belongs to\"] = "<<vectorController::get()->cells[i].integer["belongs to"]<<"\n";
                                         cout<<"\tsetting cell "<<i+direction<<" belongs to = "<<i<<" belongs to value.\n";
                                         //however, before doing this, must check direction+direction contains cell, and that that cell is same color as i and not 0
-                                        if ((scanController::get()->cell_isoccupied(i+direction+direction))&&(vectorController::get()->cells[i+direction+direction].integer["belongs to"]==vectorController::get()->cells[i].integer["belongs to"]))
+        /* this needs to be recursive*/if ((scanController::get()->cell_isoccupied(i+direction+direction))&&(vectorController::get()->cells[i+direction+direction].integer["belongs to"]==vectorController::get()->cells[i].integer["belongs to"]))
                                         {vectorController::get()->cells[i+direction].integer["belongs to"]=vectorController::get()->cells[i].integer["belongs to"];
 
                                         cout<<"\t.integer[\"belongs to\"] = "<<vectorController::get()->cells[i+direction].integer["belongs to"]<<"\n";
