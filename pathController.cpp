@@ -41,22 +41,24 @@ void pathController::path(int i,int direction)
 
 
     if (vectorController::get()->cells[i].boolean["visible"]){
-        cout<<"path("<<i<<") found a visible cell @ "<<i<<" while searching direction "<<direction<<"\n";
+        //cout<<"path("<<i<<") found a visible cell @ "<<i<<" while searching. direction "<<direction<<"\n";
             if (scanController::get()->cell_isoccupied(i+direction)){
+                cout<<"path("<<i<<") found cell "<<i+direction<<" is occupied.\n";
                    //useless check  if (vectorController::get()->cells[i+direction].boolean["visible"]){
                             //check that it isn't cell[i]'s color
                             if (vectorController::get()->cells[i].integer["belongs to"]!=vectorController::get()->cells[i+direction].integer["belongs to"]){
                                     if (vectorController::get()->cells[i].integer["belongs to"]!=0){
-                                        cout<<"path("<<i<<") found that cell "<<i<<" is the opposite color of cell "<<i+direction<<"\n";
+                                        cout<<"path("<<i<<") found that new cell ("<<i+direction<<") is the opposite color of starting cell ("<<i<<").\n";
                                         cout<<"\t.integer[\"belongs to\"] = "<<vectorController::get()->cells[i+direction].integer["belongs to"]<<"\n";
-                                        cout<<"\tsetting cell "<<i+direction<<"'s belongs to value.\n";
+                                        cout<<"\ti.integer[\"belongs to\"] = "<<vectorController::get()->cells[i].integer["belongs to"]<<"\n";
+                                        cout<<"\tsetting cell "<<i+direction<<" belongs to = "<<i<<" belongs to value.\n";
                                         //however, before doing this, must check direction+direction contains cell, and that that cell is same color as i and not 0
-                                        if (vectorController::get()->cells[i].integer["belongs to"]==1)
-                                            vectorController::get()->cells[i+direction].integer["belongs to"]=2;
-                                        else if (vectorController::get()->cells[i].integer["belongs to"]==2)
-                                            vectorController::get()->cells[i+direction].integer["belongs to"]=1;
+                                        if ((scanController::get()->cell_isoccupied(i+direction+direction))&&(vectorController::get()->cells[i+direction+direction].integer["belongs to"]==vectorController::get()->cells[i].integer["belongs to"]))
+                                        {vectorController::get()->cells[i+direction].integer["belongs to"]=vectorController::get()->cells[i].integer["belongs to"];
 
                                         cout<<"\t.integer[\"belongs to\"] = "<<vectorController::get()->cells[i+direction].integer["belongs to"]<<"\n";
+                                        cout<<"\ti.integer[\"belongs to\"] = "<<vectorController::get()->cells[i].integer["belongs to"]<<"\n";
+                                        }else{cout<<"\t\tdirection+direction is not occupied&&samecolor as i\n";}
                                     }
                             }
               //useless check      }else{cout<<"path("<<i<<") found that direction "<<direction<<" terminated @ "<<i+direction<<". no cell found.\n";}

@@ -13,4 +13,4 @@ REWROTE THE ENTIRE CODEBASE USING Controllers and vector-maps
 availability algorithm notes---
     -left/up not being DRAWN to screen.
     -then, some directions don't get checks() when they should, or the directions dont get set ["valid space"]
-    -^ example when 37 placed, check 37 right
+    -^ example when 37 placed, check 37 right isn't called.

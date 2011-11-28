@@ -6,6 +6,7 @@
 #include "vectorController.h"
 #include "scanController.h"
 #include "pathController.h"
+#include "cinController.h"
 #include <sstream>
 using namespace std;
 
@@ -117,9 +118,13 @@ while(windowController::get()->window()->IsOpened()){
 
 
 
-
 while (windowController::get()->window()->GetEvent(Event))
         {
+         if ((Event.Type == sf::Event::KeyReleased)&&(Event.Key.Code == sf::Key::Menu)){
+                std::cout<<"outsiderun";
+                cinController cinThread;
+                cinThread.Launch();
+         }
          if ((Event.Type == sf::Event::KeyReleased)&&(Event.Key.Code == sf::Key::P))
                 scanController::get()->print_cells("boolean","valid space"); //view the cell matrix by type .boolean["valid space"]
          if ((Event.Type == sf::Event::KeyReleased)&&(Event.Key.Code == sf::Key::R))
