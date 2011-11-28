@@ -57,9 +57,14 @@ while(windowController::get()->window()->IsOpened()){
                 }
 
 
-    if ((vectorController::get()->cells[i].boolean["valid space"]==true)||(vectorController::get()->cells[i].boolean["visible"]==true))
-        windowController::get()->window()->Draw(sf::String(sf::Unicode::Text::Text((const char *)i)));
-
+    if ((vectorController::get()->cells[i].boolean["valid space"]==true)||(vectorController::get()->cells[i].boolean["visible"]==true)){
+     //sf::String label;
+     //char * str;
+     //itoa(i,str,10);
+     //label.SetText(str);
+     //label.SetCenter(vectorController::get()->cells[i].integer["x"]+vectorController::get()->cells[i].integer["chip radius addition"],vectorController::get()->cells[i].integer["y"]+vectorController::get()->cells[i].integer["chip radius addition"]);
+     //windowController::get()->window()->Draw(label);
+    }
 
     if (vectorController::get()->cells[i].boolean["valid space"]==true)
     {
