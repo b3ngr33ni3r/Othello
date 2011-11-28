@@ -145,7 +145,40 @@ void scanController::reset_last_valid_space_index()
 
 
 
+void scanController::print_cells(string type,string key){
 
+int counter=0;
+int temp=-1;
+
+cout<<"scanController::print_cells() is printing ."<<type<<"['"<<key<<"'] \n";
+//the direction is slanted so left side is top.
+    if (type=="boolean"){
+        for (int i=0;i<vectorController::get()->cells.size();i++){
+            if (i%8 == 0){ cout<<vectorController::get()->cells[i].boolean[key]<<" "; temp=counter;}
+            if (i%8 == 1){ cout<<vectorController::get()->cells[i].boolean[key]<<" ";}
+            if (i%8 == 2){ cout<<vectorController::get()->cells[i].boolean[key]<<" ";}
+            if (i%8 == 3){ cout<<vectorController::get()->cells[i].boolean[key]<<" ";}
+            if (i%8 == 4){ cout<<vectorController::get()->cells[i].boolean[key]<<" ";}
+            if (i%8 == 5){ cout<<vectorController::get()->cells[i].boolean[key]<<" ";}
+            if (i%8 == 6){ cout<<vectorController::get()->cells[i].boolean[key]<<" ";}
+            if (i%8 == 7){ cout<<vectorController::get()->cells[i].boolean[key]<<" "; counter++;}
+            if (counter>temp){cout<<"\n";}
+            }
+    }else if (type=="integer"){
+        for (int i=0;i<vectorController::get()->cells.size();i++){
+            if (i%8 == 0){ cout<<vectorController::get()->cells[i].integer[key]<<" "; temp=counter;}
+            if (i%8 == 1){ cout<<vectorController::get()->cells[i].integer[key]<<" ";}
+            if (i%8 == 2){ cout<<vectorController::get()->cells[i].integer[key]<<" ";}
+            if (i%8 == 3){ cout<<vectorController::get()->cells[i].integer[key]<<" ";}
+            if (i%8 == 4){ cout<<vectorController::get()->cells[i].integer[key]<<" ";}
+            if (i%8 == 5){ cout<<vectorController::get()->cells[i].integer[key]<<" ";}
+            if (i%8 == 6){ cout<<vectorController::get()->cells[i].integer[key]<<" ";}
+            if (i%8 == 7){ cout<<vectorController::get()->cells[i].integer[key]<<" "; counter++;}
+            if (counter>temp){cout<<"\n";}
+            }
+    }else {cout<<"Oops.. "<<type<<" is an invalid type.\n";}
+
+}
 
 
 

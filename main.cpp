@@ -120,6 +120,8 @@ while(windowController::get()->window()->IsOpened()){
 
 while (windowController::get()->window()->GetEvent(Event))
         {
+         if ((Event.Type == sf::Event::KeyReleased)&&(Event.Key.Code == sf::Key::P))
+                scanController::get()->print_cells("boolean","valid space"); //view the cell matrix by type .boolean["valid space"]
          if ((Event.Type == sf::Event::KeyReleased)&&(Event.Key.Code == sf::Key::R))
                 windowController::get()->draw=true;//force a refresh
          if ((Event.Type == sf::Event::Closed)||((Event.Type == sf::Event::KeyReleased)&&(Event.Key.Code == sf::Key::Escape)))
@@ -135,7 +137,9 @@ while (windowController::get()->window()->GetEvent(Event))
 
                             if ((!vectorController::get()->cells[current_cell].boolean["visible"])&&(vectorController::get()->cells[current_cell].boolean["valid space"])){
                                 cout<<"clicked "<<current_cell<<"\trow "<<(current_cell%8)<<"\n";
+
                                 vectorController::get()->cells[current_cell].boolean["visible"]=true;
+                                vectorController::get()->cells[current_cell].boolean["valid space"]=false;
 
                                 if (turns::get()->turn==2){
                                     turns::get()->turn=1;

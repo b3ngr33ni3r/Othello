@@ -1,20 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="..\main.cpp" open="1" top="1" tabpos="1">
-		<Cursor position="104" topLine="0" />
+	<File name="NOTES.txt" open="1" top="1" tabpos="7">
+		<Cursor position="264" topLine="0" />
 	</File>
-	<File name="..\pathController.cpp" open="1" top="0" tabpos="5">
-		<Cursor position="713" topLine="29" />
+	<File name="..\README" open="1" top="0" tabpos="6">
+		<Cursor position="368" topLine="0" />
 	</File>
-	<File name="..\pathController.h" open="1" top="0" tabpos="4">
+	<File name="..\framework.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="1603" topLine="37" />
+	</File>
+	<File name="..\main.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="1744" topLine="58" />
+	</File>
+	<File name="..\pathController.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="775" topLine="36" />
+	</File>
+	<File name="..\pathController.h" open="0" top="0" tabpos="4">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="..\scanController.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="3621" topLine="6" />
+	<File name="..\scanController.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="3633" topLine="120" />
 	</File>
-	<File name="..\scanController.h" open="1" top="0" tabpos="2">
+	<File name="..\scanController.h" open="0" top="0" tabpos="2">
 		<Cursor position="384" topLine="0" />
+	</File>
+	<File name="..\turns.h" open="0" top="0" tabpos="0">
+		<Cursor position="204" topLine="0" />
 	</File>
 	<File name="..\vectorController.cpp" open="0" top="0" tabpos="4">
 		<Cursor position="339" topLine="0" />
@@ -22,10 +34,10 @@
 	<File name="..\vectorController.h" open="0" top="0" tabpos="3">
 		<Cursor position="448" topLine="0" />
 	</File>
-	<File name="..\windowController.cpp" open="0" top="0" tabpos="9">
-		<Cursor position="274" topLine="0" />
+	<File name="..\windowController.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="234" topLine="0" />
 	</File>
 	<File name="..\windowController.h" open="0" top="0" tabpos="8">
-		<Cursor position="229" topLine="0" />
+		<Cursor position="260" topLine="0" />
 	</File>
 </CodeBlocks_layout_file>

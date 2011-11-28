@@ -1,6 +1,6 @@
 #ifndef SCANCONTROLLER_H
 #define SCANCONTROLLER_H
-
+#include <string>
 
 class scanController
 {
@@ -11,7 +11,7 @@ class scanController
         bool direction_isvalid(int cell,int direction,bool internal=false);
         bool cell_isoccupied(int cell);
         void checks(int i);
-
+        void print_cells(std::string type,std::string key);
     protected:
     private:
     int get_last_valid_space_index();

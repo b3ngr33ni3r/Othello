@@ -1,7 +1,16 @@
 NOTES:
 
-its a little glitchy finding available cells for movement 11/10/11
-Logic::path() may not work the way it's intended 11/10/11
+#its a little glitchy finding available cells for movement 11/10/11
+#Logic::path() may not work the way it's intended 11/10/11
+#
+#
+#wrote little helper functions is_gamepeice and does_colormatch 11/9/11
+#
+
+REWROTE THE ENTIRE CODEBASE USING Controllers and vector-maps
 
 
-wrote little helper functions is_gamepeice and does_colormatch 11/9/11
+availability algorithm notes---
+    -left/up not being DRAWN to screen.
+    -then, some directions don't get checks() when they should, or the directions dont get set ["valid space"]
+    -^ example when 37 placed, check 37 right
