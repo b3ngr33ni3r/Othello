@@ -7,7 +7,7 @@ sf::RenderWindow* windowController::windowReal=NULL;
 windowController::windowController()
 {
     //ctor
-    draw=false;
+    draw=true;
 
 }
 
