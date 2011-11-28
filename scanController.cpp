@@ -67,41 +67,61 @@ if (vectorController::get()->cells[i].boolean["visible"]){
 cout<<"checks("<<i<<")\n";
 //check left
     if (scanController::get()->direction_isvalid(i,movement::moveLeft)){
+        cout<<"\tMove Left Set True\n";
         vectorController::get()->cells[i+movement::moveLeft].boolean["valid space"]=true;
-        if (vectorController::get()->cells[i].integer["belongs to"]==1)
+        if (vectorController::get()->cells[i].integer["belongs to"]==1){
         vectorController::get()->cells[i+movement::moveLeft].integer["valid space belongs to"]=2;
-        if (vectorController::get()->cells[i].integer["belongs to"]==2)
+        cout<<"\t\tvalid space belongs to SET TO 2\n";
+        }
+        if (vectorController::get()->cells[i].integer["belongs to"]==2){
         vectorController::get()->cells[i+movement::moveLeft].integer["valid space belongs to"]=1;
+        cout<<"\t\tvalid space belongs to SET TO 1\n";
+        }
 
     }
 
 //check right
     if (scanController::get()->direction_isvalid(i,movement::moveRight)){
+        cout<<"\tMove Right Set True\n";
         vectorController::get()->cells[i+movement::moveRight].boolean["valid space"]=true;
-        if (vectorController::get()->cells[i].integer["belongs to"]==1)
+        if (vectorController::get()->cells[i].integer["belongs to"]==1){
         vectorController::get()->cells[i+movement::moveRight].integer["valid space belongs to"]=2;
-        if (vectorController::get()->cells[i].integer["belongs to"]==2)
+        cout<<"\t\tvalid space belongs to SET TO 2\n";
+        }
+        if (vectorController::get()->cells[i].integer["belongs to"]==2){
         vectorController::get()->cells[i+movement::moveRight].integer["valid space belongs to"]=1;
+        cout<<"\t\tvalid space belongs to SET TO 1\n";
+        }
 
     }
 
 //check up
     if (scanController::get()->direction_isvalid(i,movement::moveUp)){
+        cout<<"\tMove Up Set True\n";
         vectorController::get()->cells[i+movement::moveUp].boolean["valid space"]=true;
-        if (vectorController::get()->cells[i].integer["belongs to"]==1)
+        if (vectorController::get()->cells[i].integer["belongs to"]==1){
         vectorController::get()->cells[i+movement::moveUp].integer["valid space belongs to"]=2;
-        if (vectorController::get()->cells[i].integer["belongs to"]==2)
+        cout<<"\t\tvalid space belongs to SET TO 2\n";
+        }
+        if (vectorController::get()->cells[i].integer["belongs to"]==2){
         vectorController::get()->cells[i+movement::moveUp].integer["valid space belongs to"]=1;
+        cout<<"\t\tvalid space belongs to SET TO 1\n";
+        }
 
     }
 
 //check down
     if (scanController::get()->direction_isvalid(i,movement::moveDown)){
+        cout<<"\tMove Down Set True\n";
         vectorController::get()->cells[i+movement::moveDown].boolean["valid space"]=true;
-        if (vectorController::get()->cells[i].integer["belongs to"]==1)
+        if (vectorController::get()->cells[i].integer["belongs to"]==1){
         vectorController::get()->cells[i+movement::moveDown].integer["valid space belongs to"]=2;
-        if (vectorController::get()->cells[i].integer["belongs to"]==2)
+        cout<<"\t\tvalid space belongs to SET TO 2\n";
+        }
+        if (vectorController::get()->cells[i].integer["belongs to"]==2){
         vectorController::get()->cells[i+movement::moveDown].integer["valid space belongs to"]=1;
+        cout<<"\t\tvalid space belongs to SET TO 1\n";
+        }
 
     }
 
