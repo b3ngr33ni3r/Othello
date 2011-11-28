@@ -64,6 +64,7 @@ void scanController::checks(int i)
 
 if (vectorController::get()->cells[i].boolean["visible"]){
 
+cout<<"checks("<<i<<")\n";
 //check left
     if (scanController::get()->direction_isvalid(i,movement::moveLeft)){
         vectorController::get()->cells[i+movement::moveLeft].boolean["valid space"]=true;
