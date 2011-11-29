@@ -48,7 +48,7 @@ windowController::get()->window()->Draw(text);
 int main()
 {
 
-
+int rendertwice_counter=0;
 
 sf::Event Event;
 const sf::Input& InputStream = windowController::get()->window()->GetInput();
@@ -106,7 +106,10 @@ while(windowController::get()->window()->IsOpened()){
         labelturns(turns::get()->turn);
 
         windowController::get()->window()->Display();
+        if (rendertwice_counter>=2){
         windowController::get()->draw=false;
+        rendertwice_counter=0;
+        }else{rendertwice_counter++;}
     }
 
 
@@ -140,7 +143,7 @@ while (windowController::get()->window()->GetEvent(Event))
                         {
                             int current_cell=frame.returnCell(InputStream.GetMouseX(),InputStream.GetMouseY());
 
-                            if ((!vectorController::get()->cells[current_cell].boolean["visible"])&&(vectorController::get()->cells[current_cell].boolean["valid space"])){
+                            if ((!vectorController::get()->cells[current_cell].boolean["visible"])&&(vectorController::get()->cells[current_cell].boolean["valid space"])&&(vectorController::get()->cells[current_cell].integer["valid space belongs to"]!=turns::get()->turn)){
                                 cout<<"clicked "<<current_cell<<"\trow "<<(current_cell%8)<<"\n";
 
                                 vectorController::get()->cells[current_cell].boolean["visible"]=true;

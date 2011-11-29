@@ -19,7 +19,7 @@ MY TOP PRIORITY is fixing the availability algorithm
 theres an issue with the cell availability algorithm, sometimes it gets
 screwed up and directions stop working.
 
-the flipping algorithm isn't causing anything to happen..at all.
+the flipping algorithm works in all key directions.
 
 ------
 TO RUN my progress so far, checkout
