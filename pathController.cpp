@@ -53,12 +53,30 @@ void pathController::path(int i,int direction)
                                         cout<<"\ti.integer[\"belongs to\"] = "<<vectorController::get()->cells[i].integer["belongs to"]<<"\n";
                                         cout<<"\tsetting cell "<<i+direction<<" belongs to = "<<i<<" belongs to value.\n";
                                         //however, before doing this, must check direction+direction contains cell, and that that cell is same color as i and not 0
-        /* this needs to be recursive*/if ((scanController::get()->cell_isoccupied(i+direction+direction))&&(vectorController::get()->cells[i+direction+direction].integer["belongs to"]==vectorController::get()->cells[i].integer["belongs to"]))
-                                        {vectorController::get()->cells[i+direction].integer["belongs to"]=vectorController::get()->cells[i].integer["belongs to"];
+        /* this needs to be recursive*/
 
-                                        cout<<"\t.integer[\"belongs to\"] = "<<vectorController::get()->cells[i+direction].integer["belongs to"]<<"\n";
+
+
+        int math=direction;
+
+        while (scanController::get()->cell_isoccupied(i+math))
+        {
+
+        if ((scanController::get()->cell_isoccupied(i+math))&&(vectorController::get()->cells[i+math].integer["belongs to"]==vectorController::get()->cells[i].integer["belongs to"]))
+                                        {vectorController::get()->cells[i+(math-direction)].integer["belongs to"]=vectorController::get()->cells[i].integer["belongs to"];
+                                        cout<<"\t.integer[\"belongs to\"] = "<<vectorController::get()->cells[i+(math-direction)].integer["belongs to"]<<"\n";
                                         cout<<"\ti.integer[\"belongs to\"] = "<<vectorController::get()->cells[i].integer["belongs to"]<<"\n";
                                         }else{cout<<"\t\tdirection+direction is not occupied&&samecolor as i\n";}
+
+
+                          math=math+direction;
+
+//working! on refresh
+
+        }
+
+
+
                                     }
                             }
               //useless check      }else{cout<<"path("<<i<<") found that direction "<<direction<<" terminated @ "<<i+direction<<". no cell found.\n";}
@@ -68,3 +86,4 @@ void pathController::path(int i,int direction)
 
  return;
 }
+

@@ -16,11 +16,11 @@
 	<File name="..\framework.cpp" open="1" top="0" tabpos="6">
 		<Cursor position="1369" topLine="25" />
 	</File>
-	<File name="..\main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="4086" topLine="69" />
+	<File name="..\main.cpp" open="1" top="1" tabpos="1">
+		<Cursor position="4086" topLine="75" />
 	</File>
-	<File name="..\pathController.cpp" open="1" top="1" tabpos="3">
-		<Cursor position="2308" topLine="38" />
+	<File name="..\pathController.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="2387" topLine="38" />
 	</File>
 	<File name="..\pathController.h" open="0" top="0" tabpos="4">
 		<Cursor position="0" topLine="0" />
