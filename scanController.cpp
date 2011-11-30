@@ -22,8 +22,7 @@ scanController::scanController()
 //one of these two functions is causing a crash effect. dislike
 bool scanController::direction_isvalid(int cell,int direction,bool internal)
 {
-if ((cell==37)&&(direction==8))
-cout<<"\t\t37 moving left";
+
 
     if ((cell+direction>63) || (cell+direction<0) || (((cell%8)==7)&&(direction==movement::moveDown)) || (((cell%8)==0)&&(direction==movement::moveUp)))
     return false;
@@ -31,7 +30,7 @@ cout<<"\t\t37 moving left";
     if(vectorController::get()->cells[cell+direction].integer["belongs to"]==0){
         if ((cell_isoccupied(cell+((-1)*direction))))
      {
-        cout<<"-returning true, direction="<<direction<<"\n";
+
          return true;
      }
 

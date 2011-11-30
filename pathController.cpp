@@ -66,12 +66,12 @@ void pathController::path(int i,int direction)
                                         {vectorController::get()->cells[i+(math-direction)].integer["belongs to"]=vectorController::get()->cells[i].integer["belongs to"];
                                         cout<<"\t.integer[\"belongs to\"] = "<<vectorController::get()->cells[i+(math-direction)].integer["belongs to"]<<"\n";
                                         cout<<"\ti.integer[\"belongs to\"] = "<<vectorController::get()->cells[i].integer["belongs to"]<<"\n";
-                                        }else{cout<<"\t\tdirection+direction is not occupied&&samecolor as i\n";}
+                                        }else{cout<<"\t\tdirection+direction is not occupied && samecolor as i\n";}
 
 
                           math=math+direction;
 
-//working! on refresh
+//working!   this big whitespace gap is to take care of path finding of any length. it works!
 
         }
 
