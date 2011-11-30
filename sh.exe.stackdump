@@ -1,6 +1,6 @@
 Exception: STATUS_ACCESS_VIOLATION at eip=6102048B
 eax=00A7B6F0 ebx=61244704 ecx=75F70F81 edx=003C4138 esi=00000000 edi=0028F9F4
-ebp=61020C00 esp=0028C7C4 program=C:\CYGWIN\bin\sh.exe, pid 5604, thread main
+ebp=61020C00 esp=0028C7C4 program=C:\CYGWIN\bin\sh.exe, pid 5016, thread main
 cs=0023 ds=002B es=002B fs=0053 gs=002B ss=002B
 Stack trace:
 Frame     Function  Args
